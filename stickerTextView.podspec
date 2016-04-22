@@ -2,21 +2,22 @@
 
 Pod::Spec.new do |s|
 
-  s.name         = 'stickerTextView'
+  s.name         = "StickerTextView"
+  s.version      = "0.0.1"
+  s.summary      = "add text(multiple line support) to imageView, edit, rotate or resize them as you want, then render the text on image"
 
-  s.version      = '0.0.1'
+  s.homepage     = "https://github.com/luiyezheng/StickerTextView"
 
-  s.summary      = 'add text(multiple line support) to imageView, edit, rotate or resize them as you want, then render the text on image'
+  s.license      = "MIT"
 
-  s.homepage     = 'https://github.com/luiyezheng/StickerTextView'
+  s.author       = { "luiyezheng" => "luiyezheng@foxmail.com" }
 
-  s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
-  s.authors      = { 'luiyezheng' => 'luiyezheng@foxmail.com' }
+  s.source       = { :git => "https://github.com/luiyezheng/StickerTextView.git", :tag => "0.0.1" }
 
-  s.source       = { :git => 'https://github.com/luiyezheng/StickerTextView', :tag => '0.0.1' }
+  s.source_files  = "Source/*.swift"
 
-  s.source_files = 'Source/*'
+  s.platform = :ios, "8.0"
 
   s.requires_arc = true
 
