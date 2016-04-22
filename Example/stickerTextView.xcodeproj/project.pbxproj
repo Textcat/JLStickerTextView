@@ -1,0 +1,430 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1835A2D01CC5BD8C004F1E56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835A2CF1CC5BD8C004F1E56 /* AppDelegate.swift */; };
+		1835A2D21CC5BD8C004F1E56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835A2D11CC5BD8C004F1E56 /* ViewController.swift */; };
+		1835A2D51CC5BD8C004F1E56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1835A2D31CC5BD8C004F1E56 /* Main.storyboard */; };
+		1835A2D71CC5BD8C004F1E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1835A2D61CC5BD8C004F1E56 /* Assets.xcassets */; };
+		1835A2DA1CC5BD8C004F1E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1835A2D81CC5BD8C004F1E56 /* LaunchScreen.storyboard */; };
+		18BE70441CCA49670019CC05 /* CalcuteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70411CCA49670019CC05 /* CalcuteFunctions.swift */; };
+		18BE70451CCA49670019CC05 /* stickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70421CCA49670019CC05 /* stickerImageView.swift */; };
+		18BE70461CCA49670019CC05 /* stickerLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70431CCA49670019CC05 /* stickerLabelView.swift */; };
+		18BE704E1CCA496F0019CC05 /* stickerTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE704D1CCA496F0019CC05 /* stickerTextViewTests.swift */; };
+		18FB647E1CC90CB400712B22 /* window.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18FB647D1CC90CB400712B22 /* window.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18BE70501CCA496F0019CC05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1835A2C41CC5BD8C004F1E56 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1835A2CB1CC5BD8C004F1E56;
+			remoteInfo = stickerTextView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1835A2CC1CC5BD8C004F1E56 /* stickerTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = stickerTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1835A2CF1CC5BD8C004F1E56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1835A2D11CC5BD8C004F1E56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1835A2D41CC5BD8C004F1E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1835A2D61CC5BD8C004F1E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1835A2D91CC5BD8C004F1E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1835A2DB1CC5BD8C004F1E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BE70411CCA49670019CC05 /* CalcuteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcuteFunctions.swift; sourceTree = "<group>"; };
+		18BE70421CCA49670019CC05 /* stickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stickerImageView.swift; sourceTree = "<group>"; };
+		18BE70431CCA49670019CC05 /* stickerLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stickerLabelView.swift; sourceTree = "<group>"; };
+		18BE704B1CCA496F0019CC05 /* stickerTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stickerTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18BE704D1CCA496F0019CC05 /* stickerTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stickerTextViewTests.swift; sourceTree = "<group>"; };
+		18BE704F1CCA496F0019CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18FB647D1CC90CB400712B22 /* window.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = window.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1835A2C91CC5BD8C004F1E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BE70481CCA496F0019CC05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1835A2C31CC5BD8C004F1E56 = {
+			isa = PBXGroup;
+			children = (
+				18BE70401CCA49670019CC05 /* Source */,
+				1835A2CE1CC5BD8C004F1E56 /* stickerTextView */,
+				18BE704C1CCA496F0019CC05 /* stickerTextViewTests */,
+				1835A2CD1CC5BD8C004F1E56 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1835A2CD1CC5BD8C004F1E56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1835A2CC1CC5BD8C004F1E56 /* stickerTextView.app */,
+				18BE704B1CCA496F0019CC05 /* stickerTextViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1835A2CE1CC5BD8C004F1E56 /* stickerTextView */ = {
+			isa = PBXGroup;
+			children = (
+				1835A2CF1CC5BD8C004F1E56 /* AppDelegate.swift */,
+				1835A2D11CC5BD8C004F1E56 /* ViewController.swift */,
+				1835A2D31CC5BD8C004F1E56 /* Main.storyboard */,
+				1835A2D61CC5BD8C004F1E56 /* Assets.xcassets */,
+				18FB647D1CC90CB400712B22 /* window.jpg */,
+				1835A2D81CC5BD8C004F1E56 /* LaunchScreen.storyboard */,
+				1835A2DB1CC5BD8C004F1E56 /* Info.plist */,
+			);
+			path = stickerTextView;
+			sourceTree = "<group>";
+		};
+		18BE70401CCA49670019CC05 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				18BE70411CCA49670019CC05 /* CalcuteFunctions.swift */,
+				18BE70421CCA49670019CC05 /* stickerImageView.swift */,
+				18BE70431CCA49670019CC05 /* stickerLabelView.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		18BE704C1CCA496F0019CC05 /* stickerTextViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				18BE704D1CCA496F0019CC05 /* stickerTextViewTests.swift */,
+				18BE704F1CCA496F0019CC05 /* Info.plist */,
+			);
+			path = stickerTextViewTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1835A2CB1CC5BD8C004F1E56 /* stickerTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1835A2DE1CC5BD8C004F1E56 /* Build configuration list for PBXNativeTarget "stickerTextView" */;
+			buildPhases = (
+				1835A2C81CC5BD8C004F1E56 /* Sources */,
+				1835A2C91CC5BD8C004F1E56 /* Frameworks */,
+				1835A2CA1CC5BD8C004F1E56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = stickerTextView;
+			productName = stickerTextView;
+			productReference = 1835A2CC1CC5BD8C004F1E56 /* stickerTextView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18BE704A1CCA496F0019CC05 /* stickerTextViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18BE70521CCA496F0019CC05 /* Build configuration list for PBXNativeTarget "stickerTextViewTests" */;
+			buildPhases = (
+				18BE70471CCA496F0019CC05 /* Sources */,
+				18BE70481CCA496F0019CC05 /* Frameworks */,
+				18BE70491CCA496F0019CC05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18BE70511CCA496F0019CC05 /* PBXTargetDependency */,
+			);
+			name = stickerTextViewTests;
+			productName = stickerTextViewTests;
+			productReference = 18BE704B1CCA496F0019CC05 /* stickerTextViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1835A2C41CC5BD8C004F1E56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = luiyezheng;
+				TargetAttributes = {
+					1835A2CB1CC5BD8C004F1E56 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					18BE704A1CCA496F0019CC05 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 1835A2CB1CC5BD8C004F1E56;
+					};
+				};
+			};
+			buildConfigurationList = 1835A2C71CC5BD8C004F1E56 /* Build configuration list for PBXProject "stickerTextView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1835A2C31CC5BD8C004F1E56;
+			productRefGroup = 1835A2CD1CC5BD8C004F1E56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1835A2CB1CC5BD8C004F1E56 /* stickerTextView */,
+				18BE704A1CCA496F0019CC05 /* stickerTextViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1835A2CA1CC5BD8C004F1E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1835A2DA1CC5BD8C004F1E56 /* LaunchScreen.storyboard in Resources */,
+				18FB647E1CC90CB400712B22 /* window.jpg in Resources */,
+				1835A2D71CC5BD8C004F1E56 /* Assets.xcassets in Resources */,
+				1835A2D51CC5BD8C004F1E56 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BE70491CCA496F0019CC05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1835A2C81CC5BD8C004F1E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BE70451CCA49670019CC05 /* stickerImageView.swift in Sources */,
+				1835A2D21CC5BD8C004F1E56 /* ViewController.swift in Sources */,
+				18BE70461CCA49670019CC05 /* stickerLabelView.swift in Sources */,
+				1835A2D01CC5BD8C004F1E56 /* AppDelegate.swift in Sources */,
+				18BE70441CCA49670019CC05 /* CalcuteFunctions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18BE70471CCA496F0019CC05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18BE704E1CCA496F0019CC05 /* stickerTextViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18BE70511CCA496F0019CC05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1835A2CB1CC5BD8C004F1E56 /* stickerTextView */;
+			targetProxy = 18BE70501CCA496F0019CC05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1835A2D31CC5BD8C004F1E56 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1835A2D41CC5BD8C004F1E56 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1835A2D81CC5BD8C004F1E56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1835A2D91CC5BD8C004F1E56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1835A2DC1CC5BD8C004F1E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1835A2DD1CC5BD8C004F1E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1835A2DF1CC5BD8C004F1E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = stickerTextView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.stickerTextView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1835A2E01CC5BD8C004F1E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = stickerTextView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.stickerTextView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		18BE70531CCA496F0019CC05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = stickerTextViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.stickerTextViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stickerTextView.app/stickerTextView";
+			};
+			name = Debug;
+		};
+		18BE70541CCA496F0019CC05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = stickerTextViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.stickerTextViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/stickerTextView.app/stickerTextView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1835A2C71CC5BD8C004F1E56 /* Build configuration list for PBXProject "stickerTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1835A2DC1CC5BD8C004F1E56 /* Debug */,
+				1835A2DD1CC5BD8C004F1E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1835A2DE1CC5BD8C004F1E56 /* Build configuration list for PBXNativeTarget "stickerTextView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1835A2DF1CC5BD8C004F1E56 /* Debug */,
+				1835A2E01CC5BD8C004F1E56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18BE70521CCA496F0019CC05 /* Build configuration list for PBXNativeTarget "stickerTextViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18BE70531CCA496F0019CC05 /* Debug */,
+				18BE70541CCA496F0019CC05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1835A2C41CC5BD8C004F1E56 /* Project object */;
+}
