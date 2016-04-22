@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => 'https://github.com/luiyezheng/StickerTextView', :tag => '0.0.1' }
 
-  s.source_files = 'Source/*.swift'
+  s.source_files = 'Source/*'
 
   s.requires_arc = true
 
