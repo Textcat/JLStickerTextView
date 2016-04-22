@@ -12,10 +12,10 @@
 		1835A2D51CC5BD8C004F1E56 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1835A2D31CC5BD8C004F1E56 /* Main.storyboard */; };
 		1835A2D71CC5BD8C004F1E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1835A2D61CC5BD8C004F1E56 /* Assets.xcassets */; };
 		1835A2DA1CC5BD8C004F1E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1835A2D81CC5BD8C004F1E56 /* LaunchScreen.storyboard */; };
-		18BE70441CCA49670019CC05 /* CalcuteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70411CCA49670019CC05 /* CalcuteFunctions.swift */; };
-		18BE70451CCA49670019CC05 /* stickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70421CCA49670019CC05 /* stickerImageView.swift */; };
-		18BE70461CCA49670019CC05 /* stickerLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70431CCA49670019CC05 /* stickerLabelView.swift */; };
 		18BE704E1CCA496F0019CC05 /* stickerTextViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE704D1CCA496F0019CC05 /* stickerTextViewTests.swift */; };
+		18BE70591CCA57ED0019CC05 /* CalcuteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70561CCA57ED0019CC05 /* CalcuteFunctions.swift */; };
+		18BE705A1CCA57ED0019CC05 /* stickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70571CCA57ED0019CC05 /* stickerImageView.swift */; };
+		18BE705B1CCA57ED0019CC05 /* stickerLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE70581CCA57ED0019CC05 /* stickerLabelView.swift */; };
 		18FB647E1CC90CB400712B22 /* window.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18FB647D1CC90CB400712B22 /* window.jpg */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +37,12 @@
 		1835A2D61CC5BD8C004F1E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1835A2D91CC5BD8C004F1E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1835A2DB1CC5BD8C004F1E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18BE70411CCA49670019CC05 /* CalcuteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcuteFunctions.swift; sourceTree = "<group>"; };
-		18BE70421CCA49670019CC05 /* stickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stickerImageView.swift; sourceTree = "<group>"; };
-		18BE70431CCA49670019CC05 /* stickerLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stickerLabelView.swift; sourceTree = "<group>"; };
 		18BE704B1CCA496F0019CC05 /* stickerTextViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = stickerTextViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BE704D1CCA496F0019CC05 /* stickerTextViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stickerTextViewTests.swift; sourceTree = "<group>"; };
 		18BE704F1CCA496F0019CC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18BE70561CCA57ED0019CC05 /* CalcuteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcuteFunctions.swift; sourceTree = "<group>"; };
+		18BE70571CCA57ED0019CC05 /* stickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stickerImageView.swift; sourceTree = "<group>"; };
+		18BE70581CCA57ED0019CC05 /* stickerLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stickerLabelView.swift; sourceTree = "<group>"; };
 		18FB647D1CC90CB400712B22 /* window.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = window.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +67,7 @@
 		1835A2C31CC5BD8C004F1E56 = {
 			isa = PBXGroup;
 			children = (
-				18BE70401CCA49670019CC05 /* Source */,
+				18BE70551CCA57ED0019CC05 /* Source */,
 				1835A2CE1CC5BD8C004F1E56 /* stickerTextView */,
 				18BE704C1CCA496F0019CC05 /* stickerTextViewTests */,
 				1835A2CD1CC5BD8C004F1E56 /* Products */,
@@ -97,16 +97,6 @@
 			path = stickerTextView;
 			sourceTree = "<group>";
 		};
-		18BE70401CCA49670019CC05 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				18BE70411CCA49670019CC05 /* CalcuteFunctions.swift */,
-				18BE70421CCA49670019CC05 /* stickerImageView.swift */,
-				18BE70431CCA49670019CC05 /* stickerLabelView.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		18BE704C1CCA496F0019CC05 /* stickerTextViewTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +104,16 @@
 				18BE704F1CCA496F0019CC05 /* Info.plist */,
 			);
 			path = stickerTextViewTests;
+			sourceTree = "<group>";
+		};
+		18BE70551CCA57ED0019CC05 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				18BE70561CCA57ED0019CC05 /* CalcuteFunctions.swift */,
+				18BE70571CCA57ED0019CC05 /* stickerImageView.swift */,
+				18BE70581CCA57ED0019CC05 /* stickerLabelView.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,11 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18BE70451CCA49670019CC05 /* stickerImageView.swift in Sources */,
+				18BE705A1CCA57ED0019CC05 /* stickerImageView.swift in Sources */,
 				1835A2D21CC5BD8C004F1E56 /* ViewController.swift in Sources */,
-				18BE70461CCA49670019CC05 /* stickerLabelView.swift in Sources */,
+				18BE705B1CCA57ED0019CC05 /* stickerLabelView.swift in Sources */,
 				1835A2D01CC5BD8C004F1E56 /* AppDelegate.swift in Sources */,
-				18BE70441CCA49670019CC05 /* CalcuteFunctions.swift in Sources */,
+				18BE70591CCA57ED0019CC05 /* CalcuteFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +423,7 @@
 				18BE70541CCA496F0019CC05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
