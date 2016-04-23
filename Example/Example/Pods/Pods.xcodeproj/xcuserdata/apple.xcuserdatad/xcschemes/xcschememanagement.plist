@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>JLStickerTextView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>StickerTextView.xcscheme</key>
+		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1D50818296A80B8DCC3570694EBC1741</key>
+		<key>C5E2582A824C62684259216111765E40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>528FEEF2978C80F88768AAD4C626BBC5</key>
+		<key>D70F295D7173FBE40303E1E606B9D640</key>
 		<dict>
 			<key>primary</key>
 			<true/>

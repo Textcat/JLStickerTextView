@@ -8,13 +8,13 @@
 
 import UIKit
 
-public class stickerImageView: UIImageView, UIGestureRecognizerDelegate {
-    private var currentlyEditingLabel: stickerLabelView!
+public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
+    private var currentlyEditingLabel: JLStickerLabelView!
     private var labels: NSMutableArray!
     private var renderedView: UIView!
     
     private lazy var tapOutsideGestureRecognizer: UITapGestureRecognizer! = {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(stickerImageView.tapOutside))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(JLStickerImageView.tapOutside))
         tapGesture.delegate = self
         return tapGesture
         
@@ -46,15 +46,15 @@ public class stickerImageView: UIImageView, UIGestureRecognizerDelegate {
 }
 //MARK: -
 //MARK: Functions
-extension stickerImageView {
+extension JLStickerImageView {
     public func addLabel() {
-        if let label: stickerLabelView = currentlyEditingLabel {
+        if let label: JLStickerLabelView = currentlyEditingLabel {
             label.hideEditingHandlers()
         }
         let labelFrame = CGRectMake(CGRectGetMidX(self.bounds) - CGFloat(arc4random()) % 20,
                                     CGRectGetMidY(self.bounds) - CGFloat(arc4random()) % 20,
                                     60, 50)
-        let labelView = stickerLabelView(frame: labelFrame)
+        let labelView = JLStickerLabelView(frame: labelFrame)
         labelView.delegate = self
         labelView.showsContentShadow = false
         labelView.enableMoveRestriction = false
@@ -101,9 +101,9 @@ extension stickerImageView {
 
 //MARK-
 //MARK: Gesture
-extension stickerImageView {
+extension JLStickerImageView {
     func tapOutside() {
-        if let _: stickerLabelView = currentlyEditingLabel {
+        if let _: JLStickerLabelView = currentlyEditingLabel {
             currentlyEditingLabel.hideEditingHandlers()
         }
         
@@ -112,42 +112,42 @@ extension stickerImageView {
 
 //MARK-
 //MARK: stickerViewDelegate
-extension stickerImageView: stickerLabelViewDelegate {
-    public func labelViewDidBeginEditing(label: stickerLabelView) {
+extension JLStickerImageView: JLStickerLabelViewDelegate {
+    public func labelViewDidBeginEditing(label: JLStickerLabelView) {
         //labels.removeObject(label)
         
     }
     
-    public func labelViewDidClose(label: stickerLabelView) {
+    public func labelViewDidClose(label: JLStickerLabelView) {
         
     }
     
-    public func labelViewDidShowEditingHandles(label: stickerLabelView) {
+    public func labelViewDidShowEditingHandles(label: JLStickerLabelView) {
         currentlyEditingLabel = label
         
     }
     
-    public func labelViewDidHideEditingHandles(label: stickerLabelView) {
+    public func labelViewDidHideEditingHandles(label: JLStickerLabelView) {
         currentlyEditingLabel = nil
         
     }
     
-    public func labelViewDidStartEditing(label: stickerLabelView) {
+    public func labelViewDidStartEditing(label: JLStickerLabelView) {
         currentlyEditingLabel = label
         
     }
     
-    public func labelViewDidChangeEditing(label: stickerLabelView) {
+    public func labelViewDidChangeEditing(label: JLStickerLabelView) {
         
     }
     
-    public func labelViewDidEndEditing(label: stickerLabelView) {
+    public func labelViewDidEndEditing(label: JLStickerLabelView) {
         
     }
     
-    public func labelViewDidSelected(label: stickerLabelView) {
+    public func labelViewDidSelected(label: JLStickerLabelView) {
         for labelItem in labels {
-            if let label: stickerLabelView = labelItem as! stickerLabelView {
+            if let label: JLStickerLabelView = labelItem as! JLStickerLabelView {
                 label.hideEditingHandlers()
             }
         }
@@ -160,7 +160,7 @@ extension stickerImageView: stickerLabelViewDelegate {
 //MARK: -
 //MARK: Set propeties
 
-extension stickerImageView {
+extension JLStickerImageView {
     
     public var fontName: String! {
         set {

@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## StickerTextView
+## JLStickerTextView
 
 The MIT License (MIT)
 

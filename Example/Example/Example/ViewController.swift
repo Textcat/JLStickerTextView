@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import StickerTextView
+import JLStickerTextView
 
 class ViewController: UIViewController {
     var colorsArray = [UIColor.whiteColor(), UIColor.blackColor(), UIColor.yellowColor()]
     var fontNamesArray = ["AcademyEngravedLetPlain", "AlNile-Bold", "Chalkduster"]
     var textAlphaArray = [0.3, 0.6, 1.0]
 
-    @IBOutlet var stickerView: stickerImageView!
+    @IBOutlet var stickerView: JLStickerImageView!
     
     @IBAction func onRefreshColor(sender: UIBarButtonItem) {
         let index = arc4random_uniform(3)

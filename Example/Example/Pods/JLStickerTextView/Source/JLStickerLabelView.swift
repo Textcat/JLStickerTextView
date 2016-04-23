@@ -1,5 +1,5 @@
 //
-//  stickerLabelView.swift
+//  JLStickerLabelView.swift
 //  stickerTextView
 //
 //  Created by 刘业臻 on 16/4/19.
@@ -8,34 +8,34 @@
 
 import UIKit
 
-public class stickerLabelView: UIView {
+public class JLStickerLabelView: UIView {
     private lazy var moveGestureRecognizer: UIPanGestureRecognizer! = {
-        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(stickerLabelView.moveGesture(_:)))
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(JLStickerLabelView.moveGesture(_:)))
         panRecognizer.delegate = self
         return panRecognizer
     }()
     
     private lazy var singleTapShowHide: UITapGestureRecognizer! = {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(stickerLabelView.contentTapped(_:)))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(JLStickerLabelView.contentTapped(_:)))
         tapRecognizer.delegate = self
         return tapRecognizer
     }()
     
     private lazy var closeTap: UITapGestureRecognizer! = {
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: (#selector(stickerLabelView.closeTap(_:))))
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: (#selector(JLStickerLabelView.closeTap(_:))))
         tapRecognizer.delegate = self
         return tapRecognizer
     }()
     
     private lazy var panRotateGesture: UIPanGestureRecognizer! = {
-        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(stickerLabelView.rotateViewPanGesture(_:)))
+        let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(JLStickerLabelView.rotateViewPanGesture(_:)))
         panRecognizer.delegate = self
         return panRecognizer
     }()
     
-    private var lastTouchedView: stickerLabelView?
+    private var lastTouchedView: JLStickerLabelView?
     
-    var delegate: stickerLabelViewDelegate?
+    var delegate: JLStickerLabelViewDelegate?
     
     private var globalInset: CGFloat?
     
@@ -257,7 +257,7 @@ public class stickerLabelView: UIView {
 }
 //MARK: -
 //MARK: labelTextViewDelegate
-extension stickerLabelView: UITextViewDelegate {
+extension JLStickerLabelView: UITextViewDelegate {
     public func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         if (isShowingEditingHandles) {
             return true
@@ -266,8 +266,8 @@ extension stickerLabelView: UITextViewDelegate {
     }
     
     public func textViewDidBeginEditing(textView: UITextView) {
-        if let delegate: stickerLabelViewDelegate = delegate {
-            if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidStartEditing(_:))) {
+        if let delegate: JLStickerLabelViewDelegate = delegate {
+            if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidStartEditing(_:))) {
                 delegate.labelViewDidStartEditing!(self)
             }
         }
@@ -307,7 +307,7 @@ extension stickerLabelView: UITextViewDelegate {
 //MARK: -
 //MARK: GestureRecognizer
 
-extension stickerLabelView: UIGestureRecognizerDelegate {
+extension JLStickerLabelView: UIGestureRecognizerDelegate {
     func contentTapped(recognizer: UITapGestureRecognizer) {
         if isShowingEditingHandles {
             self.hideEditingHandlers()
@@ -320,8 +320,8 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
     func closeTap(recognizer: UITapGestureRecognizer) {
         self.removeFromSuperview()
         
-        if let delegate: stickerLabelViewDelegate = delegate {
-            if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidClose(_:))) {
+        if let delegate: JLStickerLabelViewDelegate = delegate {
+            if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidClose(_:))) {
                 delegate.labelViewDidClose!(self)
             }
         }
@@ -331,7 +331,7 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
         if !isShowingEditingHandles {
             self.showEditingHandles()
             
-            if let delegate: stickerLabelViewDelegate = delegate {
+            if let delegate: JLStickerLabelViewDelegate = delegate {
                 delegate.labelViewDidSelected!(self)
             }
         }
@@ -346,7 +346,7 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
             self.center = self.estimatedCenter()
             beginBounds = self.bounds
             
-            if let delegate: stickerLabelViewDelegate = delegate {
+            if let delegate: JLStickerLabelViewDelegate = delegate {
              delegate.labelViewDidBeginEditing!(self)
             }
             
@@ -356,7 +356,7 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
             self.center = self.estimatedCenter()
             
             
-             if let delegate: stickerLabelViewDelegate = delegate {
+             if let delegate: JLStickerLabelViewDelegate = delegate {
              delegate.labelViewDidChangeEditing!(self)
              }
  
@@ -365,7 +365,7 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
             self.center = self.estimatedCenter()
             
             
-             if let delegate: stickerLabelViewDelegate = delegate {
+             if let delegate: JLStickerLabelViewDelegate = delegate {
              delegate.labelViewDidEndEditing!(self)
              }
             
@@ -385,8 +385,8 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
             initialBounds = self.bounds
             initialDistance = CalculateFunctions.CGpointGetDistance(center, point2: touchLocation!)
             
-            if let delegate: stickerLabelViewDelegate = delegate {
-                if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidBeginEditing(_:))) {
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidBeginEditing(_:))) {
                     delegate.labelViewDidBeginEditing!(self)
                 }
             }
@@ -415,14 +415,14 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
                 }
             }
             
-            if let delegate: stickerLabelViewDelegate = delegate {
-                if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidChangeEditing(_:))) {
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidChangeEditing(_:))) {
                     delegate.labelViewDidChangeEditing!(self)
                 }
             }
         case .Ended:
-            if let delegate: stickerLabelViewDelegate = delegate {
-                if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidEndEditing(_:))) {
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidEndEditing(_:))) {
                     delegate.labelViewDidEndEditing!(self)
                 }
             }
@@ -439,7 +439,7 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
 
 //MARK: -
 //MARK: Help funcitons
-extension stickerLabelView {
+extension JLStickerLabelView {
     
     private func refresh() {
         if let superView: UIView = self.superview {
@@ -478,8 +478,8 @@ extension stickerLabelView {
         
         self.refresh()
         
-        if let delegate : stickerLabelViewDelegate = delegate {
-            if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidHideEditingHandles(_:))) {
+        if let delegate : JLStickerLabelViewDelegate = delegate {
+            if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidHideEditingHandles(_:))) {
                 delegate.labelViewDidHideEditingHandles!(self)
             }
         }
@@ -503,8 +503,8 @@ extension stickerLabelView {
         
         self.refresh()
         
-        if let delegate: stickerLabelViewDelegate = delegate {
-            if delegate.respondsToSelector(#selector(stickerLabelViewDelegate.labelViewDidShowEditingHandles(_:))) {
+        if let delegate: JLStickerLabelViewDelegate = delegate {
+            if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidShowEditingHandles(_:))) {
                 delegate.labelViewDidShowEditingHandles!(self)
             }
         }
@@ -573,54 +573,54 @@ extension stickerLabelView {
     
 }
 
-@objc public protocol stickerLabelViewDelegate: NSObjectProtocol {
+@objc public protocol JLStickerLabelViewDelegate: NSObjectProtocol {
     /**
      *  Occurs when a touch gesture event occurs on close button.
      *
      *  @param label    A label object informing the delegate about action.
      */
-    optional func labelViewDidClose(label: stickerLabelView) -> Void
+    optional func labelViewDidClose(label: JLStickerLabelView) -> Void
     /**
      *  Occurs when border and control buttons was shown.
      *
      *  @param label    A label object informing the delegate about showing.
      */
-    optional func labelViewDidShowEditingHandles(label: stickerLabelView) -> Void
+    optional func labelViewDidShowEditingHandles(label: JLStickerLabelView) -> Void
     /**
      *  Occurs when border and control buttons was hidden.
      *
      *  @param label    A label object informing the delegate about hiding.
      */
-    optional func labelViewDidHideEditingHandles(label: stickerLabelView) -> Void
+    optional func labelViewDidHideEditingHandles(label: JLStickerLabelView) -> Void
     /**
      *  Occurs when label become first responder.
      *
      *  @param label    A label object informing the delegate about action.
      */
-    optional func labelViewDidStartEditing(label: stickerLabelView) -> Void
+    optional func labelViewDidStartEditing(label: JLStickerLabelView) -> Void
     /**
      *  Occurs when label starts move or rotate.
      *
      *  @param label    A label object informing the delegate about action.
      */
-    optional func labelViewDidBeginEditing(label: stickerLabelView) -> Void
+    optional func labelViewDidBeginEditing(label: JLStickerLabelView) -> Void
     /**
      *  Occurs when label continues move or rotate.
      *
      *  @param label    A label object informing the delegate about action.
      */
-    optional func labelViewDidChangeEditing(label: stickerLabelView) -> Void
+    optional func labelViewDidChangeEditing(label: JLStickerLabelView) -> Void
     /**
      *  Occurs when label ends move or rotate.
      *
      *  @param label    A label object informing the delegate about action.
      */
-    optional func labelViewDidEndEditing(label: stickerLabelView) -> Void
+    optional func labelViewDidEndEditing(label: JLStickerLabelView) -> Void
     
     
     
     
-    optional func labelViewDidSelected(label: stickerLabelView) -> Void
+    optional func labelViewDidSelected(label: JLStickerLabelView) -> Void
     
 }
 

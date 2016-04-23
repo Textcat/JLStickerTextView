@@ -1,19 +1,19 @@
 PODS:
-  - StickerTextView (0.1.1)
+  - JLStickerTextView (0.1.1)
 
 DEPENDENCIES:
-  - StickerTextView (from `https://github.com/luiyezheng/StickerTextView.git`)
+  - JLStickerTextView (from `https://github.com/luiyezheng/JLStickerTextView.git`)
 
 EXTERNAL SOURCES:
-  StickerTextView:
-    :git: https://github.com/luiyezheng/StickerTextView.git
+  JLStickerTextView:
+    :git: https://github.com/luiyezheng/JLStickerTextView.git
 
 CHECKOUT OPTIONS:
-  StickerTextView:
-    :commit: 392e8e73cbe7b00598924d8e9b4ab8c027b17051
-    :git: https://github.com/luiyezheng/StickerTextView.git
+  JLStickerTextView:
+    :commit: a08a237ebd7ff601f442633f18e897cddaf2eb14
+    :git: https://github.com/luiyezheng/JLStickerTextView.git
 
 SPEC CHECKSUMS:
-  StickerTextView: 7b01b14988ffbdfa08d0916c79267ccb64baf52f
+  JLStickerTextView: 830123837eb0ac93de76759725eb4779a8ff280b
 
 COCOAPODS: 0.39.0

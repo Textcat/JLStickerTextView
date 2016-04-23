@@ -1,0 +1,6 @@
+framework module JLStickerTextView {
+  umbrella header "JLStickerTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}
