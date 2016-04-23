@@ -1,0 +1,23 @@
+{
+  "name": "StickerTextView",
+  "version": "0.0.1",
+  "summary": "add text(multiple line support) to imageView, edit, rotate or resize them as you want, then render the text on image",
+  "homepage": "https://github.com/luiyezheng/StickerTextView",
+  "license": "MIT",
+  "authors": {
+    "luiyezheng": "luiyezheng@foxmail.com"
+  },
+  "source": {
+    "git": "https://github.com/luiyezheng/StickerTextView.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "Source/*.swift",
+  "platforms": {
+    "ios": "8.0"
+  },
+  "requires_arc": true,
+  "frameworks": [
+    "UIKit",
+    "Foundation"
+  ]
+}

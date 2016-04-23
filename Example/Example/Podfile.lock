@@ -1,0 +1,10 @@
+PODS:
+  - StickerTextView (0.1.0)
+
+DEPENDENCIES:
+  - StickerTextView (~> 0.1.0)
+
+SPEC CHECKSUMS:
+  StickerTextView: ebbca4104de2481db092a18039517ee50920fc5b
+
+COCOAPODS: 0.39.0

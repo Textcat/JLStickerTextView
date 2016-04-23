@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SF-t7-qL5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="UlQ-au-Omg"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="StickerTextView" id="jOh-To-s5y">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="dJd-16-rl0">
+                                            <connections>
+                                                <action selector="onAddLabel:" destination="BYZ-38-t0r" id="udT-n9-bma"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem systemItem="save" id="2LM-Gw-SbZ">
+                                                <connections>
+                                                    <action selector="onSaveImage:" destination="BYZ-38-t0r" id="B4s-VW-t5Z"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="refresh" id="el3-yA-Sjv">
+                                                <connections>
+                                                    <action selector="onRefreshColor:" destination="BYZ-38-t0r" id="55q-7O-fFG"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" systemItem="refresh" id="DBA-ss-GgL">
+                                                <connections>
+                                                    <action selector="onRefreshFont:" destination="BYZ-38-t0r" id="OxQ-lh-zLU"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="refresh" id="wmN-TG-V4j">
+                                                <connections>
+                                                    <action selector="onRefreshTextAlpha:" destination="BYZ-38-t0r" id="NIw-cS-Suz"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UlQ-au-Omg"/>
+                                    </mask>
+                                </variation>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bridge" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-8z-18R" customClass="stickerImageView" customModule="StickerTextView">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="Hd9-u0-oD9"/>
+                                    <constraint firstAttribute="height" constant="556" id="nrm-L0-6xH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8dV-8z-18R" secondAttribute="bottom" id="0bR-E3-xZi"/>
+                            <constraint firstItem="8dV-8z-18R" firstAttribute="top" secondItem="2SF-t7-qL5" secondAttribute="bottom" id="330-o6-1hD"/>
+                            <constraint firstItem="8dV-8z-18R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ip-rB-v9z"/>
+                            <constraint firstItem="2SF-t7-qL5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="F8r-Nk-COO"/>
+                            <constraint firstItem="2SF-t7-qL5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IAz-Fx-DYL"/>
+                            <constraint firstItem="2SF-t7-qL5" firstAttribute="trailing" secondItem="8dV-8z-18R" secondAttribute="trailing" id="QYP-gm-qiU"/>
+                            <constraint firstItem="8dV-8z-18R" firstAttribute="top" secondItem="2SF-t7-qL5" secondAttribute="bottom" id="SmS-a8-aVD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8dV-8z-18R" secondAttribute="bottom" constant="56" id="T8P-u8-vAT"/>
+                            <constraint firstAttribute="trailing" secondItem="2SF-t7-qL5" secondAttribute="trailing" id="Vjd-9v-03a"/>
+                            <constraint firstItem="8dV-8z-18R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VsY-Gw-QV0"/>
+                            <constraint firstItem="2SF-t7-qL5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wff-hK-241"/>
+                            <constraint firstItem="2SF-t7-qL5" firstAttribute="leading" secondItem="8dV-8z-18R" secondAttribute="leading" id="a9F-lm-bUh"/>
+                            <constraint firstItem="8dV-8z-18R" firstAttribute="top" secondItem="2SF-t7-qL5" secondAttribute="bottom" constant="84" id="kgI-uD-U1B"/>
+                            <constraint firstAttribute="trailing" secondItem="8dV-8z-18R" secondAttribute="trailing" id="lXp-ba-7Va"/>
+                            <constraint firstAttribute="trailing" secondItem="8dV-8z-18R" secondAttribute="trailing" id="xn0-dY-HnS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IAz-Fx-DYL"/>
+                                <exclude reference="QYP-gm-qiU"/>
+                                <exclude reference="a9F-lm-bUh"/>
+                                <exclude reference="SmS-a8-aVD"/>
+                                <exclude reference="VsY-Gw-QV0"/>
+                                <exclude reference="kgI-uD-U1B"/>
+                                <exclude reference="xn0-dY-HnS"/>
+                                <exclude reference="T8P-u8-vAT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="stickerView" destination="8dV-8z-18R" id="pTg-Ki-wwt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="415"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bridge" width="6000" height="4000"/>
+    </resources>
+</document>

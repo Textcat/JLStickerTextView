@@ -1,0 +1,6 @@
+framework module StickerTextView {
+  umbrella header "StickerTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}
