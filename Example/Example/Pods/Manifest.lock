@@ -2,16 +2,7 @@ PODS:
   - JLStickerTextView (0.1.1)
 
 DEPENDENCIES:
-  - JLStickerTextView (from `https://github.com/luiyezheng/JLStickerTextView.git`)
-
-EXTERNAL SOURCES:
-  JLStickerTextView:
-    :git: https://github.com/luiyezheng/JLStickerTextView.git
-
-CHECKOUT OPTIONS:
-  JLStickerTextView:
-    :commit: a08a237ebd7ff601f442633f18e897cddaf2eb14
-    :git: https://github.com/luiyezheng/JLStickerTextView.git
+  - JLStickerTextView (~> 0.1.1)
 
 SPEC CHECKSUMS:
   JLStickerTextView: 830123837eb0ac93de76759725eb4779a8ff280b

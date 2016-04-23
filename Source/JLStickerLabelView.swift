@@ -547,7 +547,6 @@ extension JLStickerLabelView {
             
             if (CGRectGetHeight(rectSize) <= CGRectGetHeight(newBounds)) {
                 self.fontSize = CGFloat(i) - 1
-                print(self.fontSize)
                 break
             }
             

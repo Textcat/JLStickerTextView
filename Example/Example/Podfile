@@ -1,3 +1,2 @@
 use_frameworks!
-pod "JLStickerTextView", :git =>
-"https://github.com/luiyezheng/JLStickerTextView.git"
+pod "JLStickerTextView", "~> 0.1.1"

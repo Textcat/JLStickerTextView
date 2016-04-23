@@ -12,6 +12,10 @@ StickerTextView is an subclass of UIImageView. You can add multiple text to it, 
 ###CocoaPods
 To integrate StickerTextView into your Xcode project using CocoaPods, specify it in your Podfile:
 
+```Ruby
+use_frameworks!
+pod "JLStickerTextView", "~> 0.1.1"
+```
 
 ###Manually
 Just drag the file in Source to your project
@@ -28,7 +32,7 @@ class ViewController: UIViewController {
 ```
 ###Add new Label
 It is quite easy to add new label to current StickerImageView:
-```
+```Swift
 stickerView.addLabel()
 ```
 
@@ -36,23 +40,23 @@ stickerView.addLabel()
 You can only set the color, font and alpha of the label now, more will be added in the future. (alignment, lineSpacing and so on)
 
 ####Color
-```
+```Swift
 stickerView.textColor = UIColor.whiteColor()
 ```
 ####Alpha
-```
+```Swift
 sticker.textAlpha = CGFloat(textAlpha)
 ```
 ####Font
 ```
 stickerView.fontName = fontName
-```
+```Swift
 **Note**: when you set the properties, you make change to the selected TextLabel.
 
 ###Render Text on Image
 When you feel good, you are going to render the Text on Image:
 
-```
+```Swift
 let image = stickerView.renderTextOnView(stickerView)
 UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 ```
@@ -60,7 +64,7 @@ UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 ###Scale stickerView  proportionally
 This function is not complete yet, I just make it to fit my requirement.
 
-```
+```Swift
 stickerView.limitImageViewToSuperView()
 ```
 
@@ -70,15 +74,14 @@ When you render the text on UIImageView whose content mode is AspectFit, it is p
 Here are some ideas:
 
 * more options for text(alignment, lineSpacing.....)
-* interface for custome the appearance of StickerLabelView(close Button, rotate button, border)
+* interface to custome the appearance of StickerLabelView(close Button, rotate button, border,etc)
 * more general solution for Scaling stickerView proportionally
 
 ##Reference
 Inspired by
 
 * [IQLabelView](https://github.com/kcandr/IQLabelView)
-*  [TextDrawer](https://github.com/remirobert/TextDrawer
-)
+*  [TextDrawer](https://github.com/remirobert/TextDrawer)
 
 
 
