@@ -20,6 +20,12 @@ To integrate StickerTextView into your Xcode project using CocoaPods, specify it
 use_frameworks!
 pod "JLStickerTextView", "~> 0.1.1"
 ```
+To get the latest version:
+```Ruby
+use_frameworks!
+pod "JLStickerTextView", :git =>
+"https://github.com/luiyezheng/JLStickerTextView.git"
+```
 
 ###Manually
 Just drag the Source files into your project
