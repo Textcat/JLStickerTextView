@@ -92,6 +92,9 @@ Here are some ideas:
 * more general solution for Scaling stickerView proportionally
 * add placeholder
 
+##Contributon
+I'm new to Swift and iOS Development, so no specific restriction for contribution yet. Any suggestion, request, pull are welcome. If you encounter any problem, feel free to create an issue.
+
 ##Reference
 Inspired by
 
