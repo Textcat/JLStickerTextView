@@ -12,7 +12,7 @@ StickerTextView is an subclass of UIImageView. You can add multiple text to it, 
 
 ##Installation
 ###CocoaPods
-To integrate StickerTextView into your Xcode project using CocoaPods, specify it in your Podfile:
+To integrate StickerTextView into your Xcode project using CocoaPods, specify it in your Podfile and run `pod install`:
 
 ```Ruby
 use_frameworks!
