@@ -56,12 +56,15 @@ sticker.textAlpha = CGFloat(textAlpha)
 stickerView.fontName = fontName
 ```
 
+<<<<<<< HEAD
 ####Alignment
 
 ```
 stickerView.textAlignment = NSTextAlignment.Center
 ```
 
+=======
+>>>>>>> origin/master
 **Note**: when you set the properties, you make change to the selected TextLabel.
 
 ###Render Text on Image
