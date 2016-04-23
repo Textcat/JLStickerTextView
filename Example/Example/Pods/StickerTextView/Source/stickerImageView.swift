@@ -147,13 +147,13 @@ extension stickerImageView: stickerLabelViewDelegate {
     
     public func labelViewDidSelected(label: stickerLabelView) {
         for labelItem in labels {
-            
             if let label: stickerLabelView = labelItem as! stickerLabelView {
                 label.hideEditingHandlers()
             }
         }
         
         label.showEditingHandles()
+        
     }
     
 }

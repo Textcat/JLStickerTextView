@@ -33,4 +33,4 @@ stickerView.addLabel()
 ```
 
 ###set the Label
-You can set the color, font and alpha of the label
+You can only set the color, font and alpha of the label now, more will be added in the future. 

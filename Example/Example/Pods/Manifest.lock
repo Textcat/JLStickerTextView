@@ -1,10 +1,19 @@
 PODS:
-  - StickerTextView (0.1.0)
+  - StickerTextView (0.1.1)
 
 DEPENDENCIES:
-  - StickerTextView (~> 0.1.0)
+  - StickerTextView (from `https://github.com/luiyezheng/StickerTextView.git`)
+
+EXTERNAL SOURCES:
+  StickerTextView:
+    :git: https://github.com/luiyezheng/StickerTextView.git
+
+CHECKOUT OPTIONS:
+  StickerTextView:
+    :commit: 392e8e73cbe7b00598924d8e9b4ab8c027b17051
+    :git: https://github.com/luiyezheng/StickerTextView.git
 
 SPEC CHECKSUMS:
-  StickerTextView: ebbca4104de2481db092a18039517ee50920fc5b
+  StickerTextView: 7b01b14988ffbdfa08d0916c79267ccb64baf52f
 
 COCOAPODS: 0.39.0

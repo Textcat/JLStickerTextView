@@ -1,2 +1,3 @@
 use_frameworks!
-pod "StickerTextView", "~> 0.1.0" 
+pod "StickerTextView", :git =>
+"https://github.com/luiyezheng/StickerTextView.git"
