@@ -308,6 +308,14 @@ extension JLStickerLabelView: UITextViewDelegate {
 //MARK: GestureRecognizer
 
 extension JLStickerLabelView: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == singleTapShowHide {
+            return true
+        }
+        return false
+    }
+    
+    
     func contentTapped(recognizer: UITapGestureRecognizer) {
         if isShowingEditingHandles {
             self.hideEditingHandlers()
