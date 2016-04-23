@@ -48,9 +48,10 @@ stickerView.textColor = UIColor.whiteColor()
 sticker.textAlpha = CGFloat(textAlpha)
 ```
 ####Font
-```
-stickerView.fontName = fontName
 ```Swift
+stickerView.fontName = fontName
+```
+
 **Note**: when you set the properties, you make change to the selected TextLabel.
 
 ###Render Text on Image
