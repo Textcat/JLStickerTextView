@@ -21,6 +21,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2SF-t7-qL5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="At2-YV-cl1"/>
                                     <constraint firstAttribute="height" constant="44" id="UlQ-au-Omg"/>
                                 </constraints>
                                 <items>
@@ -91,6 +92,7 @@
                                 <exclude reference="IAz-Fx-DYL"/>
                                 <exclude reference="QYP-gm-qiU"/>
                                 <exclude reference="a9F-lm-bUh"/>
+                                <exclude reference="330-o6-1hD"/>
                                 <exclude reference="SmS-a8-aVD"/>
                                 <exclude reference="VsY-Gw-QV0"/>
                                 <exclude reference="kgI-uD-U1B"/>
