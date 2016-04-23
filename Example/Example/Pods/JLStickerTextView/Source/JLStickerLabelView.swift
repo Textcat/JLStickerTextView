@@ -308,13 +308,19 @@ extension JLStickerLabelView: UITextViewDelegate {
 //MARK: GestureRecognizer
 
 extension JLStickerLabelView: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        if gestureRecognizer == singleTapShowHide {
+            return true
+        }
+        return false
+    }
+    
+    
     func contentTapped(recognizer: UITapGestureRecognizer) {
-        if isShowingEditingHandles {
-            self.hideEditingHandlers()
-            self.superview?.bringSubviewToFront(self)
-        }else {
+        if !isShowingEditingHandles {
             self.showEditingHandles()
         }
+        
     }
     
     func closeTap(recognizer: UITapGestureRecognizer) {
@@ -347,7 +353,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             beginBounds = self.bounds
             
             if let delegate: JLStickerLabelViewDelegate = delegate {
-             delegate.labelViewDidBeginEditing!(self)
+                delegate.labelViewDidBeginEditing!(self)
             }
             
             
@@ -356,18 +362,18 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             self.center = self.estimatedCenter()
             
             
-             if let delegate: JLStickerLabelViewDelegate = delegate {
-             delegate.labelViewDidChangeEditing!(self)
-             }
- 
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                delegate.labelViewDidChangeEditing!(self)
+            }
+            
             
         case .Ended:
             self.center = self.estimatedCenter()
             
             
-             if let delegate: JLStickerLabelViewDelegate = delegate {
-             delegate.labelViewDidEndEditing!(self)
-             }
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                delegate.labelViewDidEndEditing!(self)
+            }
             
         default:break
             
@@ -401,7 +407,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             //Finding scale between current touchPoint and previous touchPoint
             let scale = sqrtf(Float(CalculateFunctions.CGpointGetDistance(center, point2: touchLocation!)) / Float(initialDistance!))
             let scaleRect = CalculateFunctions.CGRectScale(initialBounds!, wScale: CGFloat(scale), hScale: CGFloat(scale))
-
+            
             if scaleRect.size.width >= (1 + globalInset! * 2) && scaleRect.size.height >= (1 + globalInset! * 2) && self.labelTextView.text != "" {
                 //  if fontSize < 100 || CGRectGetWidth(scaleRect) < CGRectGetWidth(self.bounds) {
                 if scale < 1 && fontSize <= 9 {
@@ -411,7 +417,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
                     self.bounds = scaleRect
                     self.adjustsWidthToFillItsContens()
                     self.refresh()
-
+                    
                 }
             }
             
@@ -434,7 +440,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             
         }
     }
-
+    
 }
 
 //MARK: -
@@ -459,7 +465,7 @@ extension JLStickerLabelView {
             }
             
         }
-
+        
     }
     
     public func hideEditingHandlers() {

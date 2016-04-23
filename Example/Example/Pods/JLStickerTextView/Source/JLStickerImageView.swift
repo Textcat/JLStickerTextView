@@ -194,7 +194,7 @@ extension JLStickerImageView {
             self.currentlyEditingLabel.textAlignment = newValue
         }
         get {
-            return self.currentlyEditingLabel.textAlignment 
+            return self.currentlyEditingLabel.textAlignment
         }
     }
     

@@ -317,12 +317,10 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
     
     
     func contentTapped(recognizer: UITapGestureRecognizer) {
-        if isShowingEditingHandles {
-            self.hideEditingHandlers()
-            self.superview?.bringSubviewToFront(self)
-        }else {
+        if !isShowingEditingHandles {
             self.showEditingHandles()
         }
+        
     }
     
     func closeTap(recognizer: UITapGestureRecognizer) {
