@@ -33,4 +33,53 @@ stickerView.addLabel()
 ```
 
 ###set the Label
-You can only set the color, font and alpha of the label now, more will be added in the future. 
+You can only set the color, font and alpha of the label now, more will be added in the future. (alignment, lineSpacing and so on)
+
+####Color
+```
+stickerView.textColor = UIColor.whiteColor()
+```
+####Alpha
+```
+sticker.textAlpha = CGFloat(textAlpha)
+```
+####Font
+```
+stickerView.fontName = fontName
+```
+**Note**: when you set the properties, you make change to the selected TextLabel.
+
+###Render Text on Image
+When you feel good, you are going to render the Text on Image:
+
+```
+let image = stickerView.renderTextOnView(stickerView)
+UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+```
+
+###Scale stickerView  proportionally
+This function is not complete yet, I just make it to fit my requirement.
+
+```
+stickerView.limitImageViewToSuperView()
+```
+
+When you render the text on UIImageView whose content mode is AspectFit, it is possible you will get some unwanted border. This function will scale UIImageView to fit the image. 
+
+##Plan
+Here are some ideas:
+
+* more options for text(alignment, lineSpacing.....)
+* interface for custome the appearance of StickerLabelView(close Button, rotate button, border)
+* more general solution for Scaling stickerView proportionally
+
+##Reference
+Inspired by
+
+* [IQLabelView](https://github.com/kcandr/IQLabelView)
+*  [TextDrawer](https://github.com/remirobert/TextDrawer
+)
+
+
+
+
