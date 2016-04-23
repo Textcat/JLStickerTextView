@@ -114,7 +114,7 @@ extension stickerImageView {
 //MARK: stickerViewDelegate
 extension stickerImageView: stickerLabelViewDelegate {
     public func labelViewDidBeginEditing(label: stickerLabelView) {
-        labels.removeObject(label)
+        //labels.removeObject(label)
         
     }
     
@@ -142,6 +142,17 @@ extension stickerImageView: stickerLabelViewDelegate {
     }
     
     public func labelViewDidEndEditing(label: stickerLabelView) {
+        
+    }
+    
+    public func labelViewDidSelected(label: stickerLabelView) {
+        for labelItem in labels {
+            if let label: stickerLabelView = labelItem as! stickerLabelView {
+                label.hideEditingHandlers()
+            }
+        }
+        
+        label.showEditingHandles()
         
     }
     

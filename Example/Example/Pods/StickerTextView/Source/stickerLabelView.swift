@@ -330,6 +330,10 @@ extension stickerLabelView: UIGestureRecognizerDelegate {
     func moveGesture(recognizer: UIPanGestureRecognizer) {
         if !isShowingEditingHandles {
             self.showEditingHandles()
+            
+            if let delegate: stickerLabelViewDelegate = delegate {
+                delegate.labelViewDidSelected!(self)
+            }
         }
         
         touchLocation = recognizer.locationInView(self.superview)
@@ -612,6 +616,11 @@ extension stickerLabelView {
      *  @param label    A label object informing the delegate about action.
      */
     optional func labelViewDidEndEditing(label: stickerLabelView) -> Void
+    
+    
+    
+    
+    optional func labelViewDidSelected(label: stickerLabelView) -> Void
     
 }
 
