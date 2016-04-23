@@ -52,9 +52,9 @@ stickerView.textColor = UIColor.whiteColor()
 sticker.textAlpha = CGFloat(textAlpha)
 ```
 ####Font
-```
-stickerView.fontName = fontName
 ```Swift
+stickerView.fontName = fontName
+```
 
 ####Alignment
 
