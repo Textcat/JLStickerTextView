@@ -2,6 +2,8 @@
 
 StickerTextView is an subclass of UIImageView. You can add multiple text to it, edit, rotate, resize the text as you want with one finger, then render the text on Image.
 
+![](https://github.com/luiyezheng/JLStickerTextView/blob/master/demoScreenshot.png)
+
 ##Features
 * You can add multiple Text to StickerTextView at the same time
 * Multiple line Text support
@@ -34,6 +36,7 @@ class ViewController: UIViewController {
 ```
 
 If you use Storyboard, you also need connect the UIImageView to `JLStikcerImageView` Class in Identity Inspector.
+![](https://github.com/luiyezheng/JLStickerTextView/blob/master/Inspector.png)
 
 ###Add new Label
 It is quite easy to add new label to current StickerImageView:
@@ -62,7 +65,7 @@ stickerView.fontName = fontName
 stickerView.textAlignment = NSTextAlignment.Center
 ```
 
-**Note**: when you set the properties, you make change to the selected TextLabel.
+**Note**: when you set the properties, you make change to the current selected TextLabel.
 
 ###Render Text on Image
 When you feel good, you are going to render the Text on Image and save the image:
