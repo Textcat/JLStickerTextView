@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'BE2BA4E367C88832474A69B7'
+               BlueprintIdentifier = 'FBB9680EFDD26EE8904FFB6E'
                BlueprintName = 'JLStickerTextView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'JLStickerTextView.framework'>

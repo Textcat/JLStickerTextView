@@ -321,6 +321,10 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             self.showEditingHandles()
         }
         
+        if let delegate: JLStickerLabelViewDelegate = delegate {
+            delegate.labelViewDidSelected!(self)
+        }
+        
     }
     
     func closeTap(recognizer: UITapGestureRecognizer) {

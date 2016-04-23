@@ -319,6 +319,10 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
     func contentTapped(recognizer: UITapGestureRecognizer) {
         if !isShowingEditingHandles {
             self.showEditingHandles()
+            
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                delegate.labelViewDidSelected!(self)
+            }
         }
         
     }
