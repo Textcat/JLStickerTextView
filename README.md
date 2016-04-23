@@ -32,4 +32,5 @@ It is quite easy to add new label to current StickerImageView:
 stickerView.addLabel()
 ```
 
-###
+###set the Label
+You can set the color, font and alpha of the label

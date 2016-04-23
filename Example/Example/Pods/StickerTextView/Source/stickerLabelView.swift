@@ -91,7 +91,7 @@ public class stickerLabelView: UIView {
     
     public var textAlpha: CGFloat = 1 {
         didSet {
-            labelTextView.alpha = textAlpha
+            labelTextView.textColor = labelTextView.textColor?.colorWithAlphaComponent(textAlpha)
         }
     }
     

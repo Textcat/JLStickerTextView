@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "StickerTextView"
-  s.version      = "0.1.0"
+  s.version      = "0.1.1"
   s.summary      = "add text(multiple line support) to imageView, edit, rotate or resize them as you want, then render the text on image"
 
   s.homepage     = "https://github.com/luiyezheng/StickerTextView"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
 
   s.author       = { "luiyezheng" => "luiyezheng@foxmail.com" }
 
-  s.source       = { :git => "https://github.com/luiyezheng/StickerTextView.git", :tag => "0.1.0" }
+  s.source       = { :git => "https://github.com/luiyezheng/StickerTextView.git", :tag => "0.1.1" }
 
   s.platform = :ios, "8.0"
 
