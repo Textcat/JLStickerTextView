@@ -96,9 +96,11 @@ Here are some ideas:
 No specific restriction for contribution yet. Any suggestion, request, pull are welcome. If you encounter any problem, feel free to create an issue.
 
 ##Reference
-Inspired by
 
+Based on 
 * [IQLabelView](https://github.com/kcandr/IQLabelView)
+
+Also inspired by
 *  [TextDrawer](https://github.com/remirobert/TextDrawer)
 
 
