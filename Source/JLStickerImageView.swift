@@ -25,6 +25,10 @@ public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
         }
     }
     
+    //MARK: -
+    //MARK: init
+
+    
     init() {
         super.init(frame: CGRectZero)
         userInteractionEnabled = true
@@ -44,6 +48,7 @@ public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
     }
     
 }
+
 //MARK: -
 //MARK: Functions
 extension JLStickerImageView {
@@ -51,6 +56,7 @@ extension JLStickerImageView {
         if let label: JLStickerLabelView = currentlyEditingLabel {
             label.hideEditingHandlers()
         }
+    
         let labelFrame = CGRectMake(CGRectGetMidX(self.bounds) - CGFloat(arc4random()) % 20,
                                     CGRectGetMidY(self.bounds) - CGFloat(arc4random()) % 20,
                                     60, 50)
@@ -58,14 +64,15 @@ extension JLStickerImageView {
         labelView.delegate = self
         labelView.showsContentShadow = false
         labelView.enableMoveRestriction = false
-        labelView.fontName = "Baskerville-BoldItalic"
-        
+        labelView.borderColor = UIColor.whiteColor()
+        labelView.labelTextView.fontName = "Baskerville-BoldItalic"
         self.addSubview(labelView)
-        
+        self.currentlyEditingLabel = labelView
+        adjustsWidthToFillItsContens(currentlyEditingLabel, labelView: currentlyEditingLabel.labelTextView)
+        self.labels.addObject(labelView)
+
         self.addGestureRecognizer(tapOutsideGestureRecognizer)
         
-        self.currentlyEditingLabel = labelView
-        self.labels.addObject(labelView)
     }
     
     public func renderTextOnView(view: UIView) -> UIImage? {
@@ -142,12 +149,13 @@ extension JLStickerImageView: JLStickerLabelViewDelegate {
     }
     
     public func labelViewDidEndEditing(label: JLStickerLabelView) {
+
         
     }
     
     public func labelViewDidSelected(label: JLStickerLabelView) {
         for labelItem in labels {
-            if let label: JLStickerLabelView = labelItem as! JLStickerLabelView {
+            if let label: JLStickerLabelView = labelItem as? JLStickerLabelView {
                 label.hideEditingHandlers()
             }
         }
@@ -160,43 +168,74 @@ extension JLStickerImageView: JLStickerLabelViewDelegate {
 //MARK: -
 //MARK: Set propeties
 
-extension JLStickerImageView {
+extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
     
     public var fontName: String! {
         set {
-            self.currentlyEditingLabel.fontName = newValue
+            self.currentlyEditingLabel.labelTextView.fontName = newValue
+            adjustsWidthToFillItsContens(currentlyEditingLabel, labelView: currentlyEditingLabel.labelTextView)
         }
         get {
-            return self.currentlyEditingLabel.fontName
+            return self.currentlyEditingLabel.labelTextView.fontName
         }
     }
     
     public var textColor: UIColor! {
         set {
-            self.currentlyEditingLabel.textColor = newValue
+            self.currentlyEditingLabel.labelTextView.foregroundColor = newValue
         }
         get {
-            return self.currentlyEditingLabel.textColor
+            return self.currentlyEditingLabel.labelTextView.foregroundColor
         }
     }
     
     public var textAlpha: CGFloat! {
         set {
-            self.currentlyEditingLabel.textAlpha = newValue
+            self.currentlyEditingLabel.labelTextView.textAlpha = newValue
         }
         get {
-            return self.currentlyEditingLabel.textAlpha
+            return self.currentlyEditingLabel.labelTextView.textAlpha
         }
     }
     
     public var textAlignment: NSTextAlignment! {
         set {
-            self.currentlyEditingLabel.textAlignment = newValue
+            self.currentlyEditingLabel.labelTextView.alignment = newValue
         }
         get {
-            return self.currentlyEditingLabel.textAlignment
+            return self.currentlyEditingLabel.labelTextView.alignment
         }
     }
     
+    public var lineSpacing: CGFloat! {
+        set {
+            self.currentlyEditingLabel.labelTextView.lineSpacing = newValue
+            adjustsWidthToFillItsContens(currentlyEditingLabel, labelView: currentlyEditingLabel.labelTextView)
+            
+        }
+        get {
+            return self.currentlyEditingLabel.labelTextView.lineSpacing
+            
+        }
+    }
+    
+    public var textBackgroundColor: UIColor! {
+        set {
+            self.currentlyEditingLabel.labelTextView.textBackgroundColor = newValue
+        }
+        
+        get {
+            return self.currentlyEditingLabel.labelTextView.textBackgroundColor
+        }
+    }
+    
+    public var textBackgroundAlpha: CGFloat! {
+        set {
+            self.currentlyEditingLabel.labelTextView.textBackgroundAlpha = newValue
+        }
+        get {
+            return self.currentlyEditingLabel.labelTextView.textBackgroundAlpha
+        }
+    }
     
 }

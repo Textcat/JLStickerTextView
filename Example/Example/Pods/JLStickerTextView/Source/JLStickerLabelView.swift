@@ -95,6 +95,12 @@ public class JLStickerLabelView: UIView {
         }
     }
     
+    public var lineSpacing: CGFloat = 1 {
+        didSet {
+            
+        }
+    }
+    
     //MARK: -
     //MARK: Set Control Buttons
     
@@ -319,11 +325,13 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
     func contentTapped(recognizer: UITapGestureRecognizer) {
         if !isShowingEditingHandles {
             self.showEditingHandles()
+            
+            if let delegate: JLStickerLabelViewDelegate = delegate {
+                delegate.labelViewDidSelected!(self)
+            }
+
         }
         
-        if let delegate: JLStickerLabelViewDelegate = delegate {
-            delegate.labelViewDidSelected!(self)
-        }
         
     }
     
@@ -567,7 +575,7 @@ extension JLStickerLabelView {
         let text = self.labelTextView.text
         
         let font = UIFont(name: String(self.fontName), size: self.fontSize)
-        let attributedText = NSAttributedString(string: text, attributes: [NSFontAttributeName: font!])
+        let attributedText = NSAttributedString( string: text, attributes: [NSFontAttributeName: font!])
         
         let recSize = attributedText.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: .UsesLineFragmentOrigin, context: nil)
         

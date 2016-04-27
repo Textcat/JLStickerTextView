@@ -1,0 +1,6 @@
+version: "Apple Swift version 2.2 (swiftlang-703.0.18.1 clang-703.0.29)"
+options: "5026ca4e1739dde1c4b1f5d843f67542"
+build_time: [514777633, 98207000]
+inputs:
+  "/Users/apple/Documents/computerscience&math&finance,project,learningNotes/computerscience/project/JLStickerTextView/Example/Example/Example/ViewController.swift": !dirty [514718524, 0]
+  "/Users/apple/Documents/computerscience&math&finance,project,learningNotes/computerscience/project/JLStickerTextView/Example/Example/Example/AppDelegate.swift": !dirty [514692456, 0]
