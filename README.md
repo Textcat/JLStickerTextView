@@ -71,6 +71,12 @@ stickerView.fontName = fontName
 stickerView.textAlignment = NSTextAlignment.Center
 ```
 
+####LineSpacing
+
+```
+stickerView.lineSpacing = lineSpacing
+```
+
 **Note**: when you set the properties, you make change to the current selected TextLabel.
 
 ###Render Text on Image
