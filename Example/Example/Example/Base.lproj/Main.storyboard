@@ -52,6 +52,11 @@
                                                     <action selector="onRefreshTextAlpha:" destination="BYZ-38-t0r" id="NIw-cS-Suz"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem systemItem="refresh" id="9Aj-3E-Cra">
+                                                <connections>
+                                                    <action selector="onRefreshLineSpacing:" destination="BYZ-38-t0r" id="SDn-do-2q1"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>

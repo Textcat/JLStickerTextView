@@ -30,6 +30,8 @@ public class JLAttributedTextView: UITextView {
             let font = UIFont(name: fontName, size: fontSize)
             textAttributes[NSFontAttributeName] = font
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            
+            self.font = font
         }
     }
     
@@ -38,6 +40,8 @@ public class JLAttributedTextView: UITextView {
             let font = UIFont(name: fontName, size: fontSize)
             textAttributes[NSFontAttributeName] = font
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            
+            self.font = font
         }
     }
     
@@ -48,6 +52,24 @@ public class JLAttributedTextView: UITextView {
         didSet {
             textAttributes[NSForegroundColorAttributeName] = foregroundColor
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+        }
+    }
+    
+    //MARK: -
+    //MARK: backgroundColor
+    public var textBackgroundColor: UIColor? {
+        didSet {
+            self.layer.backgroundColor = textBackgroundColor?.CGColor
+            //textAttributes[NSBackgroundColorAttributeName] = textBackgroundColor
+            //self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+        }
+    }
+    
+    public var textBackgroundAlpha: CGFloat? {
+        didSet {
+            //textAttributes[NSBackgroundColorAttributeName] = textBackgroundColor?.colorWithAlphaComponent(textBackgroundAlpha!)
+            //self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.layer.backgroundColor = textBackgroundColor?.colorWithAlphaComponent(textBackgroundAlpha!).CGColor
         }
     }
 
@@ -166,6 +188,8 @@ extension JLAttributedTextView {
     }
     
 }
+
+
 
 
 

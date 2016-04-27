@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var colorsArray = [UIColor.whiteColor(), UIColor.blackColor(), UIColor.yellowColor()]
     var fontNamesArray = ["AcademyEngravedLetPlain", "AlNile-Bold", "Chalkduster"]
     var textAlphaArray = [0.3, 0.6, 1.0]
+    var lineSpacings = [1,30,50]
 
     @IBOutlet var stickerView: JLStickerImageView!
     
@@ -21,6 +22,13 @@ class ViewController: UIViewController {
         let color = colorsArray[Int(index)]
         
         stickerView.textColor = color
+    }
+    
+    @IBAction func onRefreshLineSpacing(sender: UIBarButtonItem) {
+        let index = arc4random_uniform(3)
+        let lineSpacing = lineSpacings[Int(index)]
+        
+        stickerView.lineSpacing = CGFloat(lineSpacing)
     }
     
     

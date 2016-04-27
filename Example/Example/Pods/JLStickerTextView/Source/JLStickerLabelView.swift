@@ -9,6 +9,9 @@
 import UIKit
 
 public class JLStickerLabelView: UIView {
+    //MARK: -
+    //MARK: Gestures
+
     private lazy var moveGestureRecognizer: UIPanGestureRecognizer! = {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(JLStickerLabelView.moveGesture(_:)))
         panRecognizer.delegate = self
@@ -33,6 +36,9 @@ public class JLStickerLabelView: UIView {
         return panRecognizer
     }()
     
+    //MARK: -
+    //MARK: properties
+    
     private var lastTouchedView: JLStickerLabelView?
     
     var delegate: JLStickerLabelViewDelegate?
@@ -51,55 +57,18 @@ public class JLStickerLabelView: UIView {
     private var beginBounds: CGRect?
     
     private var boarder: CAShapeLayer?
-    private var labelTextView: UITextView!
+    public  var  labelTextView: JLAttributedTextView!
     private var rotateView: UIImageView?
     private var closeView: UIImageView?
     
     private var isShowingEditingHandles = true
     
-    //MARK: -
-    //MARK: Set Text Field
-    
-    public var textColor: UIColor? {
-        didSet {
-            labelTextView.textColor = textColor
-        }
-    }
     public var borderColor: UIColor? {
         didSet {
             boarder?.strokeColor = borderColor?.CGColor
         }
     }
-    public var fontName: String = "Baskerville-BoldItalic" {
-        didSet {
-            labelTextView.font = UIFont(name: fontName, size: fontSize)
-            adjustsWidthToFillItsContens()
-        }
-    }
-    public var fontSize: CGFloat = 20 {
-        didSet {
-            labelTextView.font = UIFont(name: fontName, size: fontSize)
-            
-        }
-    }
-    
-    public var textAlignment: NSTextAlignment = .Center {
-        didSet {
-            labelTextView.textAlignment = textAlignment
-        }
-    }
-    
-    public var textAlpha: CGFloat = 1 {
-        didSet {
-            labelTextView.textColor = labelTextView.textColor?.colorWithAlphaComponent(textAlpha)
-        }
-    }
-    
-    public var lineSpacing: CGFloat = 1 {
-        didSet {
-            
-        }
-    }
+
     
     //MARK: -
     //MARK: Set Control Buttons
@@ -147,74 +116,9 @@ public class JLStickerLabelView: UIView {
             closeView?.image = rotateImage
         }
     }
-    
-    func setup() {
-        globalInset = 12
-        
-        self.backgroundColor = UIColor.clearColor()
-        self.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
-        borderColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1)
-        
-        labelTextView = UITextView(frame: CGRectInset(self.bounds, globalInset!, globalInset!))
-        labelTextView?.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        labelTextView?.clipsToBounds = true
-        labelTextView?.delegate = self
-        labelTextView?.backgroundColor = UIColor.clearColor()
-        labelTextView?.tintColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1)
-        labelTextView?.textColor = UIColor.blackColor()
-        labelTextView?.font = UIFont(name: "Baskerville-BoldItalic", size: 42)
-        labelTextView?.scrollEnabled = false
-        labelTextView.selectable = true
-        labelTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        labelTextView?.text = "Tap to Edit"
-        
-        boarder = CAShapeLayer(layer: layer)
-        boarder?.strokeColor = borderColor?.CGColor
-        boarder?.fillColor = nil
-        boarder?.lineDashPattern = [10, 2]
-        boarder?.lineWidth = 8
-        
-        self.insertSubview(labelTextView!, atIndex: 0)
-        
-        closeView = UIImageView(frame: CGRectMake(0, 0, globalInset! * 2, globalInset! * 2))
-        closeView?.autoresizingMask = [.FlexibleRightMargin, .FlexibleBottomMargin]
-        closeView!.layer.borderColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1).CGColor
-        closeView!.layer.borderWidth = 2
-        closeView?.contentMode = .ScaleAspectFill
-        closeView?.clipsToBounds = true
-        closeView?.backgroundColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1)
-        closeView?.layer.cornerRadius = globalInset! - 5
-        self.closeImage = UIImage(named: "cross")
-        closeView?.userInteractionEnabled = true
-        self.addSubview(closeView!)
-        
-        rotateView = UIImageView(frame: CGRectMake(self.bounds.size.width - globalInset! * 2, self.bounds.size.height - globalInset! * 2, globalInset! * 2, globalInset! * 2))
-        rotateView?.autoresizingMask = [.FlexibleLeftMargin, .FlexibleTopMargin]
-        rotateView?.backgroundColor = UIColor.whiteColor()
-        rotateView?.layer.cornerRadius =  globalInset! - 5
-        rotateView?.layer.borderColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1).CGColor
-        rotateView?.layer.borderWidth = 2
-        rotateView?.clipsToBounds = true
-        rotateView?.contentMode = .Center
-        rotateView?.userInteractionEnabled = true
-        self.addSubview(rotateView!)
-        
-        self.addGestureRecognizer(moveGestureRecognizer)
-        self.addGestureRecognizer(singleTapShowHide)
-        closeView!.addGestureRecognizer(closeTap)
-        rotateView!.addGestureRecognizer(panRotateGesture)
-        moveGestureRecognizer.requireGestureRecognizerToFail(closeTap)
-        
-        self.enableMoveRestriction = false
-        self.enableClose = true
-        self.enableRotate = true
-        self.showsContentShadow = true
-        
-        self.showEditingHandles()
-        labelTextView?.becomeFirstResponder()
-        
-    }
-    
+    //MARK: -
+    //MARK: didMoveToSuperView
+
     override public func didMoveToSuperview() {
         super.didMoveToSuperview()
         if self.superview != nil {
@@ -224,10 +128,13 @@ public class JLStickerLabelView: UIView {
         
     }
     
+    //MARK: -
+    //MARK: init
+
     init() {
         super.init(frame: CGRectZero)
         setup()
-        adjustsWidthToFillItsContens()
+        adjustsWidthToFillItsContens(self, labelView: labelTextView)
         
     }
     
@@ -242,14 +149,14 @@ public class JLStickerLabelView: UIView {
             self.bounds.size.height = 25
         }
         
-        setup()
-        adjustsWidthToFillItsContens()
+        self.setup()
+        adjustsWidthToFillItsContens(self, labelView: labelTextView)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
-        adjustsWidthToFillItsContens()
+        adjustsWidthToFillItsContens(self, labelView: labelTextView)
         
     }
     
@@ -260,9 +167,42 @@ public class JLStickerLabelView: UIView {
         }
     }
     
+    func setup() {
+        self.globalInset = 19
+        
+        self.backgroundColor = UIColor.clearColor()
+        self.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        self.boarder?.strokeColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1).CGColor
+        
+        self.setupLabelTextView()
+        self.setupBorder()
+        
+        self.insertSubview(labelTextView!, atIndex: 0)
+        
+        self.setupCloseAndRotateView()
+        
+        self.addGestureRecognizer(moveGestureRecognizer)
+        self.addGestureRecognizer(singleTapShowHide)
+        self.moveGestureRecognizer.requireGestureRecognizerToFail(closeTap)
+        
+        self.closeView!.addGestureRecognizer(closeTap)
+        self.rotateView!.addGestureRecognizer(panRotateGesture)
+        
+        self.enableMoveRestriction = false
+        self.enableClose = true
+        self.enableRotate = true
+        self.showsContentShadow = true
+        
+        self.showEditingHandles()
+        self.labelTextView?.becomeFirstResponder()
+        
+    }
+    
 }
+
 //MARK: -
 //MARK: labelTextViewDelegate
+
 extension JLStickerLabelView: UITextViewDelegate {
     public func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         if (isShowingEditingHandles) {
@@ -272,15 +212,12 @@ extension JLStickerLabelView: UITextViewDelegate {
     }
     
     public func textViewDidBeginEditing(textView: UITextView) {
+
         if let delegate: JLStickerLabelViewDelegate = delegate {
             if delegate.respondsToSelector(#selector(JLStickerLabelViewDelegate.labelViewDidStartEditing(_:))) {
                 delegate.labelViewDidStartEditing!(self)
             }
         }
-        if textView.text != "" {
-            adjustsWidthToFillItsContens()
-        }
-        
         
     }
     
@@ -288,23 +225,18 @@ extension JLStickerLabelView: UITextViewDelegate {
         if (!isShowingEditingHandles) {
             self.showEditingHandles()
         }
-        if textView.text != "" {
-            adjustsWidthToFillItsContens()
-        }
+        //if textView.text != "" {
+            //adjustsWidthToFillItsContens(self, labelView: labelTextView)
+        //}
         
         return true
     }
     
     public func textViewDidChange(textView: UITextView) {
         if textView.text != "" {
-            adjustsWidthToFillItsContens()
-        }
-        
-    }
-    
-    public func textViewDidEndEditing(textView: UITextView) {
-        if textView.text != "" {
-            adjustsWidthToFillItsContens()
+            adjustsWidthToFillItsContens(self, labelView: labelTextView)
+            labelTextView.attributedText = NSAttributedString(string: labelTextView.text, attributes: labelTextView.textAttributes)
+
         }
         
     }
@@ -313,7 +245,7 @@ extension JLStickerLabelView: UITextViewDelegate {
 //MARK: -
 //MARK: GestureRecognizer
 
-extension JLStickerLabelView: UIGestureRecognizerDelegate {
+extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillRectProtocol {
     public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == singleTapShowHide {
             return true
@@ -329,9 +261,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             if let delegate: JLStickerLabelViewDelegate = delegate {
                 delegate.labelViewDidSelected!(self)
             }
-
         }
-        
         
     }
     
@@ -354,7 +284,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             }
         }
         
-        touchLocation = recognizer.locationInView(self.superview)
+        self.touchLocation = recognizer.locationInView(self.superview)
         
         switch recognizer.state {
         case .Began:
@@ -368,8 +298,6 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
                 delegate.labelViewDidBeginEditing!(self)
             }
             
-            
-            
         case .Changed:
             self.center = self.estimatedCenter()
             
@@ -378,7 +306,6 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
                 delegate.labelViewDidChangeEditing!(self)
             }
             
-            
         case .Ended:
             self.center = self.estimatedCenter()
             
@@ -386,7 +313,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             if let delegate: JLStickerLabelViewDelegate = delegate {
                 delegate.labelViewDidEndEditing!(self)
             }
-            
+
         default:break
             
         }
@@ -422,14 +349,13 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             
             if scaleRect.size.width >= (1 + globalInset! * 2) && scaleRect.size.height >= (1 + globalInset! * 2) && self.labelTextView.text != "" {
                 //  if fontSize < 100 || CGRectGetWidth(scaleRect) < CGRectGetWidth(self.bounds) {
-                if scale < 1 && fontSize <= 9 {
+                if scale < 1 && labelTextView.fontSize <= 9 {
                     
                 }else {
-                    self.adjustFontSizeToFillRect(scaleRect)
+                    self.adjustFontSizeToFillRect(scaleRect, view: self, labelView: labelTextView)
                     self.bounds = scaleRect
-                    self.adjustsWidthToFillItsContens()
+                    self.adjustsWidthToFillItsContens(self, labelView: labelTextView)
                     self.refresh()
-                    
                 }
             }
             
@@ -447,13 +373,67 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate {
             
             self.refresh()
             
-            self.adjustsWidthToFillItsContens()
+            //self.adjustsWidthToFillItsContens(self, labelView: labelTextView)
         default:break
             
         }
     }
     
 }
+
+//MARK: -
+//MARK: setup
+extension JLStickerLabelView {
+    func setupLabelTextView() {
+        labelTextView = JLAttributedTextView(frame: CGRectInset(self.bounds, globalInset!, globalInset!))
+        labelTextView?.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        labelTextView?.clipsToBounds = true
+        labelTextView?.delegate = self
+        labelTextView?.backgroundColor = UIColor.clearColor()
+        labelTextView?.tintColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1)
+        labelTextView?.scrollEnabled = false
+        labelTextView.selectable = true
+        labelTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
+        labelTextView?.text = "Tap to Edit"
+
+    }
+    
+    func setupBorder() {
+        boarder = CAShapeLayer(layer: layer)
+        boarder?.strokeColor = borderColor?.CGColor
+        boarder?.fillColor = nil
+        boarder?.lineDashPattern = [10, 2]
+        boarder?.lineWidth = 8
+
+    }
+    
+    func setupCloseAndRotateView() {
+        closeView = UIImageView(frame: CGRectMake(0, 0, globalInset! * 2 - 6, globalInset! * 2 - 6))
+        closeView?.autoresizingMask = [.FlexibleRightMargin, .FlexibleBottomMargin]
+        closeView!.layer.borderColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1).CGColor
+        closeView!.layer.borderWidth = 2
+        closeView?.contentMode = .ScaleAspectFill
+        closeView?.clipsToBounds = true
+        closeView?.backgroundColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1)
+        closeView?.layer.cornerRadius = globalInset! - 5
+        self.closeImage = UIImage(named: "cross")
+        closeView?.userInteractionEnabled = true
+        self.addSubview(closeView!)
+        
+        rotateView = UIImageView(frame: CGRectMake(self.bounds.size.width - globalInset! * 2, self.bounds.size.height - globalInset! * 2, globalInset! * 2 - 6, globalInset! * 2 - 6))
+        rotateView?.autoresizingMask = [.FlexibleLeftMargin, .FlexibleTopMargin]
+        rotateView?.backgroundColor = UIColor.whiteColor()
+        rotateView?.layer.cornerRadius =  globalInset! - 5
+        rotateView?.layer.borderColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1).CGColor
+        rotateView?.layer.borderWidth = 2
+        rotateView?.clipsToBounds = true
+        rotateView?.contentMode = .Center
+        rotateView?.userInteractionEnabled = true
+        self.addSubview(rotateView!)
+    }
+
+}
+
 
 //MARK: -
 //MARK: Help funcitons
@@ -547,48 +527,13 @@ extension JLStickerLabelView {
             newCenter = CGPointMake(newCenterX, newCenterY)
         }
         return newCenter
-        
-    }
-    
-    private func adjustFontSizeToFillRect(newBounds: CGRect) {
-        let stickerMaximumFontSize = 200
-        let stickerMinimumFontSize = 9
-        let text = self.labelTextView.text
-        
-        for (var i = stickerMaximumFontSize; i > stickerMinimumFontSize; i -= 1) {
-            
-            let font = UIFont(name: String(self.fontName), size: CGFloat(i))
-            
-            let attributedText = NSAttributedString(string: text, attributes: [NSFontAttributeName: font!])
-            
-            let rectSize = attributedText.boundingRectWithSize(CGSizeMake(CGRectGetWidth(newBounds) - 24, CGFloat.max), options: [.UsesLineFragmentOrigin, .UsesFontLeading], context: nil)
-            
-            if (CGRectGetHeight(rectSize) <= CGRectGetHeight(newBounds)) {
-                self.fontSize = CGFloat(i) - 1
-                break
-            }
-            
-        }
-    }
-    
-    private func adjustsWidthToFillItsContens() {
-        let text = self.labelTextView.text
-        
-        let font = UIFont(name: String(self.fontName), size: self.fontSize)
-        let attributedText = NSAttributedString( string: text, attributes: [NSFontAttributeName: font!])
-        
-        let recSize = attributedText.boundingRectWithSize(CGSizeMake(CGFloat.max, CGFloat.max), options: .UsesLineFragmentOrigin, context: nil)
-        
-        let w1 = (ceilf(Float(recSize.size.width)) + 24 < 50) ? self.labelTextView.bounds.size.width : CGFloat(ceilf(Float(recSize.size.width)) + 24)
-        let h1 = (ceilf(Float(recSize.size.height)) + 24 < 50) ? 50 : CGFloat(ceilf(Float(recSize.size.height)) + 24)
-        
-        var viewFrame = self.bounds
-        viewFrame.size.width = w1 + 24
-        viewFrame.size.height = h1 + 18
-        self.bounds = viewFrame
     }
     
 }
+
+//MARK: -
+//MARK: delegate
+
 
 @objc public protocol JLStickerLabelViewDelegate: NSObjectProtocol {
     /**
@@ -636,11 +581,9 @@ extension JLStickerLabelView {
     
     
     
-    
     optional func labelViewDidSelected(label: JLStickerLabelView) -> Void
     
 }
-
 
 
 
