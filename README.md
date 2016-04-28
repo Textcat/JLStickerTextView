@@ -67,14 +67,22 @@ stickerView.fontName = fontName
 
 ####Alignment
 
-```
+```Swift
 stickerView.textAlignment = NSTextAlignment.Center
 ```
 
 ####LineSpacing
 
-```
+```Swift
 stickerView.lineSpacing = lineSpacing
+```
+
+####TextShadow
+
+```Swift
+stickerView.textShadowOffset = CGSizeMake(10, 10)
+stickerView.textShadowColor = UIColor.redColor()
+stickerView.textShadowBlur = 0.0
 ```
 
 **Note**: when you set the properties, you make change to the current selected TextLabel.
