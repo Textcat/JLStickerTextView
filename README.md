@@ -8,7 +8,7 @@ StickerTextView is an subclass of UIImageView. You can add multiple text to it, 
 * You can add multiple Text to StickerTextView at the same time
 * Multiple line Text support
 * Rotate, resize the text with one finger
-* set the Color, alpha, font, alignment of the text
+* Set the Color, alpha, font, alignment, TextShadow, lineSpacing of the text
 * StickerTextView also handle the process of rendering text on Image
 * Written in Swift
 
@@ -95,6 +95,14 @@ let image = stickerView.renderTextOnView(stickerView)
 UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 ```
 
+###Custom the StickerTextView appearance 
+
+Though a interface to custom stickerTextView appearance isn't avaliable yet. You can do it yourself. Here is a guide:
+
+ 1. Open `JLStickerLabelView.swift`
+ 2. Find the extension of JLStickerLabelView where I comment "setup"
+ 3. Custom close and Rotate view in `setupCloseAndRotateView()`; custom border in `setupBorder()`
+
 ###Scale stickerView  proportionally
 This function is not complete yet, I just make it to fit my requirement.
 
@@ -104,6 +112,17 @@ stickerView.limitImageViewToSuperView()
 
 When you render the text on UIImageView whose content mode is AspectFit, it is possible you will get some unwanted border. This function will scale UIImageView to fit the image. 
 
+##Contributon
+Any suggestion, request, pull are welcome. If you encounter any problem, feel free to create an issue.
+
+If you want to add more text attributes:
+
+1. Please fork this project
+2. Define the attribute you want in `JLAttributedTextView.swift` 
+3. implement user interface in `JLStickerImageVIew.swift`
+4. Write appropriate docs and comments in the README.md
+5. Submit a pull request
+
 ##Plan
 Here are some ideas:
 
@@ -112,16 +131,16 @@ Here are some ideas:
 * more general solution for Scaling stickerView proportionally
 * add placeholder
 
-##Contributon
-No specific restriction for contribution yet. Any suggestion, request, pull are welcome. If you encounter any problem, feel free to create an issue.
-
 ##Reference
 
 Based on 
+
 * [IQLabelView](https://github.com/kcandr/IQLabelView)
 
 Also inspired by
+
 *  [TextDrawer](https://github.com/remirobert/TextDrawer)
+* [TextAttributes](https://github.com/delba/TextAttributes)
 
 
 
