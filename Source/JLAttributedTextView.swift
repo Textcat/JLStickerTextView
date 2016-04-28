@@ -124,13 +124,44 @@ public class JLAttributedTextView: UITextView {
     //MARK: -
     //MARK: Shadow
     
-    public var shadow: NSShadow? = nil {
+    public var shadow: NSShadow? = NSShadow() {
         didSet {
             textAttributes[NSShadowAttributeName] = shadow
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
             self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
         }
     }
+    
+    public var textShadowOffset: CGSize! {
+        didSet {
+            shadow?.shadowOffset = textShadowOffset
+            textAttributes[NSShadowAttributeName] = shadow
+            textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
+            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            
+        }
+    }
+    
+    public var textShadowColor: UIColor! {
+        didSet {
+            shadow?.shadowColor = textShadowColor
+            textAttributes[NSShadowAttributeName] = shadow
+            textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
+            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            
+        }
+    }
+    
+    public var textShadowBlur: CGFloat! {
+        didSet {
+            shadow?.shadowBlurRadius = textShadowBlur
+            textAttributes[NSShadowAttributeName] = shadow
+            textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
+            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            
+        }
+    }
+
     #endif
     
 }
