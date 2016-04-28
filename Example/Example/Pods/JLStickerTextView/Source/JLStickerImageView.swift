@@ -170,6 +170,12 @@ extension JLStickerImageView: JLStickerLabelViewDelegate {
 
 extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
     
+    public enum textShadowPropterties {
+        case offSet(CGSize)
+        case Color(UIColor)
+        case blurRadius(CGFloat)
+    }
+    
     public var fontName: String! {
         set {
             self.currentlyEditingLabel.labelTextView.fontName = newValue
@@ -198,6 +204,9 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
         }
     }
     
+    //MARK: -
+    //MARK: text Format
+    
     public var textAlignment: NSTextAlignment! {
         set {
             self.currentlyEditingLabel.labelTextView.alignment = newValue
@@ -219,6 +228,9 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
         }
     }
     
+    //MARK: -
+    //MARK: text Background
+
     public var textBackgroundColor: UIColor! {
         set {
             self.currentlyEditingLabel.labelTextView.textBackgroundColor = newValue
@@ -235,7 +247,40 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
         }
         get {
             return self.currentlyEditingLabel.labelTextView.textBackgroundAlpha
+
         }
     }
+    
+    //MARK: -
+    //MARK: text shadow
+
+    public var textShadowOffset: CGSize! {
+        set {
+
+            self.currentlyEditingLabel.labelTextView.textShadowOffset = newValue
+        }
+        get {
+            return self.currentlyEditingLabel.labelTextView.shadow?.shadowOffset
+        }
+    }
+    
+    public var textShadowColor: UIColor! {
+        set {
+            self.currentlyEditingLabel.labelTextView.textShadowColor = newValue
+        }
+        get {
+            return (self.currentlyEditingLabel.labelTextView.shadow?.shadowColor) as? UIColor
+        }
+    }
+    
+    public var textShadowBlur: CGFloat! {
+        set {
+            self.currentlyEditingLabel.labelTextView.textShadowBlur = newValue
+        }
+        get {
+            return self.currentlyEditingLabel.labelTextView.shadow?.shadowBlurRadius
+        }
+    }
+    
     
 }

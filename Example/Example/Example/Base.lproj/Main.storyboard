@@ -57,6 +57,11 @@
                                                     <action selector="onRefreshLineSpacing:" destination="BYZ-38-t0r" id="SDn-do-2q1"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem systemItem="refresh" id="5iN-1j-EXz">
+                                                <connections>
+                                                    <action selector="onRefreshShadow:" destination="BYZ-38-t0r" id="snp-iE-dba"/>
+                                                </connections>
+                                            </barButtonItem>
                                         </rightBarButtonItems>
                                     </navigationItem>
                                 </items>

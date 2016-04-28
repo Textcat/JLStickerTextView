@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     var fontNamesArray = ["AcademyEngravedLetPlain", "AlNile-Bold", "Chalkduster"]
     var textAlphaArray = [0.3, 0.6, 1.0]
     var lineSpacings = [1,30,50]
-
+    var shadowOffsets = [1.0, 10.0, 20.0]
+    
     @IBOutlet var stickerView: JLStickerImageView!
     
     @IBAction func onRefreshColor(sender: UIBarButtonItem) {
@@ -48,7 +49,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func onAddLabel(sender: UIBarButtonItem) {
         //Add the label
         stickerView.addLabel()
@@ -59,12 +59,20 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func onRefreshShadow(sender: UIBarButtonItem) {
+        let index = arc4random_uniform(3)
+        let shadowOffset = shadowOffsets[Int(index)]
+        
+        stickerView.textShadowOffset = CGSizeMake(CGFloat(shadowOffset), 10)
+        stickerView.textShadowColor = UIColor.redColor()
+    }
+    
+    
     @IBAction func onSaveImage(sender: UIBarButtonItem) {
         //render text on Image and save the Image
         let image = stickerView.renderTextOnView(stickerView)
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
