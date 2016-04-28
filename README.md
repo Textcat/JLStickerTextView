@@ -51,7 +51,7 @@ stickerView.addLabel()
 ```
 
 ###set the Label
-You can set the color, font , alignment and alpha of the label
+You can set the color, font , alignment, alpha.... of the label
 ####Color
 ```Swift
 stickerView.textColor = UIColor.whiteColor()
