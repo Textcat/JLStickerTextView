@@ -126,10 +126,10 @@ If you want to add more text attributes:
 ##Plan
 Here are some ideas:
 
-* more options for text(eg: lineSpacing)
-* interface to custome the appearance of StickerLabelView(close Button, rotate button, border,etc)
-* more general solution for Scaling stickerView proportionally
-* add placeholder
+- [ ] More options for text(eg: lineSpacing)
+- [ ] Interface to custome the appearance of StickerLabelView(close Button, rotate button, border,etc)
+- [ ] More general solution for Scaling stickerView proportionally
+- [ ] Support placeholder
 
 ##Reference
 
