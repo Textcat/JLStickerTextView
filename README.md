@@ -88,7 +88,7 @@ When you render the text on UIImageView whose content mode is AspectFit, it is p
 
 <h2><a id="list">Avaliable Text Attributes Reference(Let's add more 😉)</a></h2>
 
-|Key                                      | `JLStickerTextView` Property | value Type     |
+|Key                                      | `JLStickerImageView` Property | value Type     |
 | ------------------------- | ------------------------------ | ------------- |
 | `Font`                                | `.fontName`                              | `String`            |
 | `Alignment`                       | `.textAlignment`                       | `NSTextAlignment` |
