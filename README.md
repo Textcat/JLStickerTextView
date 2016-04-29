@@ -8,7 +8,7 @@ StickerTextView is an subclass of UIImageView. You can add multiple text to it, 
 * You can add multiple Text to StickerTextView at the same time
 * Multiple line Text support
 * Rotate, resize the text with one finger
-* Set the Color, alpha, font, alignment, TextShadow, lineSpacing of the text
+* Set the Color, alpha, font, alignment, TextShadow, lineSpacing...... of the text
 * StickerTextView also handle the process of rendering text on Image
 * Written in Swift
 
@@ -51,39 +51,13 @@ stickerView.addLabel()
 ```
 
 ###Set the Label
-You can set the color, font , alignment, alpha.... of the label
-####Color
+
+You can set the color, font , alignment, alpha.... of the label.(<a href="#list">check all avaliable text attributes</a>)
+
+
 ```Swift
 stickerView.textColor = UIColor.whiteColor()
-```
-####Alpha
-```Swift
-sticker.textAlpha = CGFloat(textAlpha)
-```
-####Font
-```Swift
-stickerView.fontName = fontName
-```
-
-####Alignment
-
-```Swift
-stickerView.textAlignment = NSTextAlignment.Center
-```
-
-####LineSpacing
-
-```Swift
-stickerView.lineSpacing = lineSpacing
-```
-
-####TextShadow
-
-```Swift
-stickerView.textShadowOffset = CGSizeMake(10, 10)
-stickerView.textShadowColor = UIColor.redColor()
-stickerView.textShadowBlur = 0.0
-```
+```			
 
 **Note**: when you set the properties, you make change to the current selected TextLabel.
 
@@ -111,6 +85,19 @@ stickerView.limitImageViewToSuperView()
 ```
 
 When you render the text on UIImageView whose content mode is AspectFit, it is possible you will get some unwanted border. This function will scale UIImageView to fit the image. 
+
+<h2><a id="list">Avaliable Text Attributes Reference(Let's add more 😉)</a></h2>
+
+|Key                                      | `JLStickerTextView` Property | value Type     |
+| ------------------------- | ------------------------------ | ------------- |
+| `Font`                                | `.fontName`                              | `String`            |
+| `Alignment`                       | `.textAlignment`                       | `NSTextAlignment` |
+| `Alpha`                              | `.textAlpha`                               | `CGFloat `      |
+| `textColor`                        | `.textColor`                                | `UIColor`        |
+| `lineSpacing`                    | `.lineSpacing`                            | `CGFloat`       |
+|`TextShadow`                    | `.textShadowOffset`                 | `CGSize`         |
+|     										 |	`.textShadowColor`                  | `UIColor`        |
+|											 |	`.textShadowBlur`                    | `CGFloat`       |		
 
 ##Contributon
 Any suggestion, request, pull are welcome. If you encounter any problem, feel free to create an issue.
