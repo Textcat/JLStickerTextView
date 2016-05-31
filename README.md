@@ -71,11 +71,18 @@ UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 
 ###Custom the StickerTextView appearance 
 
-Though a interface to custom stickerTextView appearance isn't avaliable yet. You can do it yourself. Here is a guide:
+Custom stickerTextView appearance is very strightforward:
 
- 1. Open `JLStickerLabelView.swift`
- 2. Find the extension of JLStickerLabelView where I comment "setup"
- 3. Custom close and Rotate view in `setupCloseAndRotateView()`; custom border in `setupBorder()`
+```swift
+//Set the image of close Button
+stickerView.currentlyEditingLabel.closeView!.image = UIImage(named: "cancel")
+//Set the image of rotate Button
+stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate")
+//Set the border color of textLabel
+stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.redColor().CGColor
+
+```
+**Note**: `closeView` and `rotateView` are both UIimageView, while `border` is CAShapeLayer
 
 ###Scale stickerView  proportionally
 This function is not complete yet, I just make it to fit my requirement.
@@ -114,7 +121,7 @@ If you want to add more text attributes:
 Here are some ideas:
 
 - [ ] More options for text(eg: lineSpacing)
-- [ ] Interface to custome the appearance of StickerLabelView(close Button, rotate button, border,etc)
+- [ x ] Interface to custome the appearance of StickerLabelView(close Button, rotate button, border,etc)
 - [ ] More general solution for Scaling stickerView proportionally
 - [ ] Support placeholder
 

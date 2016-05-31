@@ -56,6 +56,9 @@ class ViewController: UIViewController {
         //Modify the Label
         stickerView.textColor = UIColor.whiteColor()
         stickerView.textAlpha = 1
+        stickerView.currentlyEditingLabel.closeView!.image = UIImage(named: "cancel")
+        stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate")
+        stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.redColor().CGColor
         
     }
     

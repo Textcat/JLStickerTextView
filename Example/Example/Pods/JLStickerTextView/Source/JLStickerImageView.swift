@@ -9,7 +9,7 @@
 import UIKit
 
 public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
-    private var currentlyEditingLabel: JLStickerLabelView!
+    public var currentlyEditingLabel: JLStickerLabelView!
     private var labels: NSMutableArray!
     private var renderedView: UIView!
     
@@ -19,11 +19,6 @@ public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
         return tapGesture
         
     }()
-    
-    public var shouldLimitImageView = false {
-        didSet {
-        }
-    }
     
     //MARK: -
     //MARK: init
@@ -165,6 +160,7 @@ extension JLStickerImageView: JLStickerLabelViewDelegate {
     }
     
 }
+
 //MARK: -
 //MARK: Set propeties
 
