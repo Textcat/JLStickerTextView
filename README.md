@@ -69,9 +69,9 @@ let image = stickerView.renderTextOnView(stickerView)
 UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 ```
 
-###Custom the StickerTextView appearance 
+###Customize the StickerTextView appearance 
 
-Custom stickerTextView appearance is very strightforward:
+Customize stickerTextView appearance is very strightforward:
 
 ```swift
 //Set the image of close Button
@@ -121,7 +121,7 @@ If you want to add more text attributes:
 Here are some ideas:
 
 - [ ] More options for text(eg: lineSpacing)
-- [x] Interface to custome the appearance of StickerLabelView(close Button, rotate button, border,etc)
+- [x] Interface to customize the appearance of StickerLabelView(close Button, rotate button, border,etc)
 - [ ] More general solution for Scaling stickerView proportionally
 - [ ] Support placeholder
 
