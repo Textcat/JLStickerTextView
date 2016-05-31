@@ -2,7 +2,7 @@
 
 StickerTextView is an subclass of UIImageView. You can add multiple text to it, edit, rotate, resize the text as you want with one finger, then render the text on Image.
 
-![](https://github.com/luiyezheng/JLStickerTextView/blob/master/demoScreenshot.png)
+![](https://github.com/luiyezheng/JLStickerTextView/blob/master/demoScreenshot.jpg)
 
 ##Features
 * You can add multiple Text to StickerTextView at the same time
