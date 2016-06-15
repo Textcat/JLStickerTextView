@@ -17,8 +17,8 @@ public class JLAttributedTextView: UITextView {
     //MARK: Alpha
     public var textAlpha: CGFloat = 1 {
         didSet {
-            textAttributes[NSForegroundColorAttributeName] = foregroundColor?.colorWithAlphaComponent(textAlpha)
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            textAttributes[NSForegroundColorAttributeName] = foregroundColor?.withAlphaComponent(textAlpha)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
         }
     }
     
@@ -29,7 +29,7 @@ public class JLAttributedTextView: UITextView {
         didSet {
             let font = UIFont(name: fontName, size: fontSize)
             textAttributes[NSFontAttributeName] = font
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
             self.font = font
         }
@@ -39,7 +39,7 @@ public class JLAttributedTextView: UITextView {
         didSet {
             let font = UIFont(name: fontName, size: fontSize)
             textAttributes[NSFontAttributeName] = font
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
             self.font = font
         }
@@ -51,7 +51,7 @@ public class JLAttributedTextView: UITextView {
     public var foregroundColor: UIColor? {
         didSet {
             textAttributes[NSForegroundColorAttributeName] = foregroundColor
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
         }
     }
     
@@ -59,7 +59,7 @@ public class JLAttributedTextView: UITextView {
     //MARK: backgroundColor
     public var textBackgroundColor: UIColor? {
         didSet {
-            self.layer.backgroundColor = textBackgroundColor?.CGColor
+            self.layer.backgroundColor = textBackgroundColor?.cgColor
             //textAttributes[NSBackgroundColorAttributeName] = textBackgroundColor
             //self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
         }
@@ -69,7 +69,7 @@ public class JLAttributedTextView: UITextView {
         didSet {
             //textAttributes[NSBackgroundColorAttributeName] = textBackgroundColor?.colorWithAlphaComponent(textBackgroundAlpha!)
             //self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
-            self.layer.backgroundColor = textBackgroundColor?.colorWithAlphaComponent(textBackgroundAlpha!).CGColor
+            self.layer.backgroundColor = textBackgroundColor?.withAlphaComponent(textBackgroundAlpha!).cgColor
         }
     }
 
@@ -90,7 +90,7 @@ public class JLAttributedTextView: UITextView {
         set {
             paragraphStyle.alignment = newValue
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
         }
     }
@@ -103,7 +103,7 @@ public class JLAttributedTextView: UITextView {
         set {
             paragraphStyle.lineSpacing = newValue
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
         }
     }
@@ -116,7 +116,7 @@ public class JLAttributedTextView: UITextView {
         set {
             paragraphStyle.paragraphSpacing = newValue
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
         }
     }
     
@@ -128,7 +128,7 @@ public class JLAttributedTextView: UITextView {
         didSet {
             textAttributes[NSShadowAttributeName] = shadow
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
         }
     }
     
@@ -137,7 +137,7 @@ public class JLAttributedTextView: UITextView {
             shadow?.shadowOffset = textShadowOffset
             textAttributes[NSShadowAttributeName] = shadow
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
         }
     }
@@ -147,7 +147,7 @@ public class JLAttributedTextView: UITextView {
             shadow?.shadowColor = textShadowColor
             textAttributes[NSShadowAttributeName] = shadow
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
         }
     }
@@ -157,7 +157,7 @@ public class JLAttributedTextView: UITextView {
             shadow?.shadowBlurRadius = textShadowBlur
             textAttributes[NSShadowAttributeName] = shadow
             textAttributes[NSParagraphStyleAttributeName] = paragraphStyle
-            self.attributedText = NSAttributedString(string: self.text, attributes: textAttributes)
+            self.attributedText = AttributedString(string: self.text, attributes: textAttributes)
             
         }
     }
@@ -179,7 +179,7 @@ public class JLAttributedTextView: UITextView {
          
          - returns: The receiver.
          */
-        public func shadow(color color: AnyObject?, offset: CGSize, blurRadius: CGFloat) -> Self {
+        public func shadow(color: AnyObject?, offset: CGSize, blurRadius: CGFloat) -> Self {
             return shadow({
                 let shadow = NSShadow()
                 shadow.shadowColor = color
@@ -196,7 +196,7 @@ public class JLAttributedTextView: UITextView {
          
          - returns: The receiver.
          */
-        public func shadow(shadow: NSShadow?) -> Self {
+        public func shadow(_ shadow: NSShadow?) -> Self {
             self.shadow = shadow
             return self
         }
@@ -209,8 +209,8 @@ public class JLAttributedTextView: UITextView {
 //MARK: CGRect of Cursor
 
 extension JLAttributedTextView {
-    override public func caretRectForPosition(position: UITextPosition) -> CGRect {
-        var originalRect = super.caretRectForPosition(position)
+    override public func caretRect(for position: UITextPosition) -> CGRect {
+        var originalRect = super.caretRect(for: position)
         originalRect.size.height = self.font!.pointSize - self.font!.descender
         // "descender" is expressed as a negative value,
         // so to add its height you must subtract its value
