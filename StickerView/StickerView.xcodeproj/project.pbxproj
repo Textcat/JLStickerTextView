@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1859E5DD1D11677900B53CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E5DC1D11677900B53CB5 /* AppDelegate.swift */; };
+		1859E5DF1D11677900B53CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E5DE1D11677900B53CB5 /* ViewController.swift */; };
+		1859E5E21D11677900B53CB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1859E5E01D11677900B53CB5 /* Main.storyboard */; };
+		1859E5E41D11677900B53CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1859E5E31D11677900B53CB5 /* Assets.xcassets */; };
+		1859E5E71D11677900B53CB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1859E5E51D11677900B53CB5 /* LaunchScreen.storyboard */; };
+		1859E5F21D11677A00B53CB5 /* StickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E5F11D11677A00B53CB5 /* StickerViewTests.swift */; };
+		1859E6021D11679400B53CB5 /* adjustToFitFontOrWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E5FD1D11679400B53CB5 /* adjustToFitFontOrWidth.swift */; };
+		1859E6031D11679400B53CB5 /* CalcuteFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E5FE1D11679400B53CB5 /* CalcuteFunctions.swift */; };
+		1859E6041D11679400B53CB5 /* JLAttributedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E5FF1D11679400B53CB5 /* JLAttributedTextView.swift */; };
+		1859E6051D11679400B53CB5 /* JLStickerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E6001D11679400B53CB5 /* JLStickerImageView.swift */; };
+		1859E6061D11679400B53CB5 /* JLStickerLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859E6011D11679400B53CB5 /* JLStickerLabelView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1859E5EE1D11677A00B53CB5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1859E5D11D11677900B53CB5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1859E5D81D11677900B53CB5;
+			remoteInfo = StickerView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1859E5D91D11677900B53CB5 /* StickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = StickerView.app; path = "/Users/apple/Documents/myProject/JLStickerTextView/StickerView/build/Debug-iphoneos/StickerView.app"; sourceTree = "<absolute>"; };
+		1859E5DC1D11677900B53CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1859E5DE1D11677900B53CB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1859E5E11D11677900B53CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1859E5E31D11677900B53CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1859E5E61D11677900B53CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1859E5E81D11677900B53CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1859E5ED1D11677A00B53CB5 /* StickerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StickerViewTests.xctest; path = "/Users/apple/Documents/myProject/JLStickerTextView/StickerView/build/Debug-iphoneos/StickerViewTests.xctest"; sourceTree = "<absolute>"; };
+		1859E5F11D11677A00B53CB5 /* StickerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewTests.swift; sourceTree = "<group>"; };
+		1859E5F31D11677A00B53CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1859E5FD1D11679400B53CB5 /* adjustToFitFontOrWidth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = adjustToFitFontOrWidth.swift; sourceTree = "<group>"; };
+		1859E5FE1D11679400B53CB5 /* CalcuteFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcuteFunctions.swift; sourceTree = "<group>"; };
+		1859E5FF1D11679400B53CB5 /* JLAttributedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLAttributedTextView.swift; sourceTree = "<group>"; };
+		1859E6001D11679400B53CB5 /* JLStickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLStickerImageView.swift; sourceTree = "<group>"; };
+		1859E6011D11679400B53CB5 /* JLStickerLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLStickerLabelView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1859E5D61D11677900B53CB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1859E5EA1D11677A00B53CB5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1859E5D01D11677900B53CB5 = {
+			isa = PBXGroup;
+			children = (
+				1859E5FC1D11678200B53CB5 /* Source */,
+				1859E5DB1D11677900B53CB5 /* StickerView */,
+				1859E5F01D11677A00B53CB5 /* StickerViewTests */,
+			);
+			sourceTree = "<group>";
+		};
+		1859E5DB1D11677900B53CB5 /* StickerView */ = {
+			isa = PBXGroup;
+			children = (
+				1859E5DC1D11677900B53CB5 /* AppDelegate.swift */,
+				1859E5DE1D11677900B53CB5 /* ViewController.swift */,
+				1859E5E01D11677900B53CB5 /* Main.storyboard */,
+				1859E5E31D11677900B53CB5 /* Assets.xcassets */,
+				1859E5E51D11677900B53CB5 /* LaunchScreen.storyboard */,
+				1859E5E81D11677900B53CB5 /* Info.plist */,
+			);
+			path = StickerView;
+			sourceTree = "<group>";
+		};
+		1859E5F01D11677A00B53CB5 /* StickerViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				1859E5F11D11677A00B53CB5 /* StickerViewTests.swift */,
+				1859E5F31D11677A00B53CB5 /* Info.plist */,
+			);
+			path = StickerViewTests;
+			sourceTree = "<group>";
+		};
+		1859E5FC1D11678200B53CB5 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1859E5FD1D11679400B53CB5 /* adjustToFitFontOrWidth.swift */,
+				1859E5FE1D11679400B53CB5 /* CalcuteFunctions.swift */,
+				1859E5FF1D11679400B53CB5 /* JLAttributedTextView.swift */,
+				1859E6001D11679400B53CB5 /* JLStickerImageView.swift */,
+				1859E6011D11679400B53CB5 /* JLStickerLabelView.swift */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1859E5D81D11677900B53CB5 /* StickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1859E5F61D11677A00B53CB5 /* Build configuration list for PBXNativeTarget "StickerView" */;
+			buildPhases = (
+				1859E5D51D11677900B53CB5 /* Sources */,
+				1859E5D61D11677900B53CB5 /* Frameworks */,
+				1859E5D71D11677900B53CB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StickerView;
+			productName = StickerView;
+			productReference = 1859E5D91D11677900B53CB5 /* StickerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1859E5EC1D11677A00B53CB5 /* StickerViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1859E5F91D11677A00B53CB5 /* Build configuration list for PBXNativeTarget "StickerViewTests" */;
+			buildPhases = (
+				1859E5E91D11677A00B53CB5 /* Sources */,
+				1859E5EA1D11677A00B53CB5 /* Frameworks */,
+				1859E5EB1D11677A00B53CB5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1859E5EF1D11677A00B53CB5 /* PBXTargetDependency */,
+			);
+			name = StickerViewTests;
+			productName = StickerViewTests;
+			productReference = 1859E5ED1D11677A00B53CB5 /* StickerViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1859E5D11D11677900B53CB5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = luiyezheng;
+				TargetAttributes = {
+					1859E5D81D11677900B53CB5 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					1859E5EC1D11677A00B53CB5 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1859E5D81D11677900B53CB5;
+					};
+				};
+			};
+			buildConfigurationList = 1859E5D41D11677900B53CB5 /* Build configuration list for PBXProject "StickerView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1859E5D01D11677900B53CB5;
+			productRefGroup = 1859E5D01D11677900B53CB5;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1859E5D81D11677900B53CB5 /* StickerView */,
+				1859E5EC1D11677A00B53CB5 /* StickerViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1859E5D71D11677900B53CB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1859E5E71D11677900B53CB5 /* LaunchScreen.storyboard in Resources */,
+				1859E5E41D11677900B53CB5 /* Assets.xcassets in Resources */,
+				1859E5E21D11677900B53CB5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1859E5EB1D11677A00B53CB5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1859E5D51D11677900B53CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1859E5DF1D11677900B53CB5 /* ViewController.swift in Sources */,
+				1859E6041D11679400B53CB5 /* JLAttributedTextView.swift in Sources */,
+				1859E5DD1D11677900B53CB5 /* AppDelegate.swift in Sources */,
+				1859E6021D11679400B53CB5 /* adjustToFitFontOrWidth.swift in Sources */,
+				1859E6061D11679400B53CB5 /* JLStickerLabelView.swift in Sources */,
+				1859E6051D11679400B53CB5 /* JLStickerImageView.swift in Sources */,
+				1859E6031D11679400B53CB5 /* CalcuteFunctions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1859E5E91D11677A00B53CB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1859E5F21D11677A00B53CB5 /* StickerViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1859E5EF1D11677A00B53CB5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1859E5D81D11677900B53CB5 /* StickerView */;
+			targetProxy = 1859E5EE1D11677A00B53CB5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1859E5E01D11677900B53CB5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1859E5E11D11677900B53CB5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1859E5E51D11677900B53CB5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1859E5E61D11677900B53CB5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1859E5F41D11677A00B53CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1859E5F51D11677A00B53CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1859E5F71D11677A00B53CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StickerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.StickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1859E5F81D11677A00B53CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = StickerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.StickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1859E5FA1D11677A00B53CB5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StickerViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.StickerViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StickerView.app/StickerView";
+			};
+			name = Debug;
+		};
+		1859E5FB1D11677A00B53CB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = StickerViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = luiyezheng.StickerViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StickerView.app/StickerView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1859E5D41D11677900B53CB5 /* Build configuration list for PBXProject "StickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1859E5F41D11677A00B53CB5 /* Debug */,
+				1859E5F51D11677A00B53CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1859E5F61D11677A00B53CB5 /* Build configuration list for PBXNativeTarget "StickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1859E5F71D11677A00B53CB5 /* Debug */,
+				1859E5F81D11677A00B53CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1859E5F91D11677A00B53CB5 /* Build configuration list for PBXNativeTarget "StickerViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1859E5FA1D11677A00B53CB5 /* Debug */,
+				1859E5FB1D11677A00B53CB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1859E5D11D11677900B53CB5 /* Project object */;
+}
