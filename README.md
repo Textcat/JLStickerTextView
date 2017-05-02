@@ -1,10 +1,10 @@
-##About
+## About
 
 StickerTextView is an subclass of UIImageView. You can add multiple text to it, edit, rotate, resize the text as you want with one finger, then render the text on Image.
 
 ![](https://github.com/luiyezheng/JLStickerTextView/blob/master/demoScreenshot.jpg)
 
-##Features
+## Features
 * You can add multiple Text to StickerTextView at the same time
 * Multiple line Text support
 * Rotate, resize the text with one finger
@@ -12,8 +12,9 @@ StickerTextView is an subclass of UIImageView. You can add multiple text to it, 
 * StickerTextView also handle the process of rendering text on Image
 * Written in Swift
 
-##Installation
-###CocoaPods
+## Installation
+
+### CocoaPods
 To integrate StickerTextView into your Xcode project using CocoaPods, specify it in your Podfile and run `pod install`:
 
 ```Ruby
@@ -27,11 +28,13 @@ pod "JLStickerTextView", :git =>
 "https://github.com/luiyezheng/JLStickerTextView.git"
 ```
 
-###Manually
+### Manually
 Just drag the Source files into your project
 
-##Usage
-###Start
+## Usage
+
+### Start
+
 First, import `JLStickerTextView`, then subclass the UIImageView, which you want to add text on, to JLStickerImageView, like this:
 
 ```Swift
@@ -44,13 +47,14 @@ class ViewController: UIViewController {
 If you use Storyboard, you also need connect the UIImageView to `JLStikcerImageView` Class in Identity Inspector.
 ![](https://github.com/luiyezheng/JLStickerTextView/blob/master/Inspector.png)
 
-###Add new Label
+### Add new Label
+
 It is quite easy to add new label to current StickerImageView:
 ```Swift
 stickerView.addLabel()
 ```
 
-###Set the Label
+### Set the Label
 
 You can set the color, font , alignment, alpha.... of the label.(<a href="#list">check all avaliable text attributes</a>)
 
@@ -61,7 +65,8 @@ stickerView.textColor = UIColor.whiteColor()
 
 **Note**: when you set the properties, you make change to the current selected TextLabel.
 
-###Render Text on Image
+### Render Text on Image
+
 When you feel good, you are going to render the Text on Image and save the image:
 
 ```Swift
@@ -69,7 +74,7 @@ let image = stickerView.renderTextOnView(stickerView)
 UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 ```
 
-###Customize the StickerTextView appearance 
+### Customize the StickerTextView appearance 
 
 Customize stickerTextView appearance is very strightforward:
 
@@ -84,7 +89,8 @@ stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.redColor().CGCol
 ```
 **Note**: `closeView` and `rotateView` are both UIimageView, while `border` is CAShapeLayer
 
-###Scale stickerView  proportionally
+### Scale stickerView  proportionally
+
 This function is not complete yet, I just make it to fit my requirement.
 
 ```
@@ -106,7 +112,8 @@ When you render the text on UIImageView whose content mode is AspectFit, it is p
 |     										 |	`.textShadowColor`                  | `UIColor`        |
 |											 |	`.textShadowBlur`                    | `CGFloat`       |		
 
-##Contributon
+## Contributon
+
 Any suggestion, request, pull are welcome. If you encounter any problem, feel free to create an issue.
 
 If you want to add more text attributes:
@@ -117,7 +124,8 @@ If you want to add more text attributes:
 4. Write appropriate docs and comments in the README.md
 5. Submit a pull request
 
-##Plan
+## Plan
+
 Here are some ideas:
 
 - [ ] More options for text(eg: lineSpacing)
@@ -125,7 +133,7 @@ Here are some ideas:
 - [ ] More general solution for Scaling stickerView proportionally
 - [ ] Support placeholder
 
-##Reference
+## Reference
 
 Based on 
 
@@ -135,7 +143,4 @@ Also inspired by
 
 *  [TextDrawer](https://github.com/remirobert/TextDrawer)
 * [TextAttributes](https://github.com/delba/TextAttributes)
-
-
-
 
