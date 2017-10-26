@@ -25,13 +25,13 @@ extension adjustFontSizeToFillRectProtocol {
         
         var tempFont = UIFont(name: view.labelTextView.fontName, size: view.labelTextView.fontSize)
         var copyTextAttributes = labelView.textAttributes
-        copyTextAttributes[NSFontAttributeName] = tempFont
+        copyTextAttributes[NSAttributedStringKey.font] = tempFont
         var attributedText = NSAttributedString(string: view.labelTextView.text, attributes: copyTextAttributes)
         
         while stickerMinimumFontSize <= stickerMaximumFontSize {
             mid = stickerMinimumFontSize + (stickerMaximumFontSize - stickerMinimumFontSize) / 2
             tempFont = UIFont(name: view.labelTextView.fontName, size: CGFloat(mid))!
-            copyTextAttributes[NSFontAttributeName] = tempFont
+            copyTextAttributes[NSAttributedStringKey.font] = tempFont
             attributedText = NSAttributedString(string: view.labelTextView.text, attributes: copyTextAttributes)
             
             difference = newBounds.height - attributedText.boundingRect(with: CGSize(width: newBounds.width - 24, height: CGFloat.greatestFiniteMagnitude), options: [.usesLineFragmentOrigin, .usesFontLeading], context: nil).height
