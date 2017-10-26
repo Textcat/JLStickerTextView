@@ -31,14 +31,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1859E5D91D11677900B53CB5 /* StickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = StickerView.app; path = "/Users/apple/Documents/myProject/JLStickerTextView/StickerView/build/Debug-iphoneos/StickerView.app"; sourceTree = "<absolute>"; };
 		1859E5DC1D11677900B53CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1859E5DE1D11677900B53CB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1859E5E11D11677900B53CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1859E5E31D11677900B53CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1859E5E61D11677900B53CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1859E5E81D11677900B53CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1859E5ED1D11677A00B53CB5 /* StickerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = StickerViewTests.xctest; path = "/Users/apple/Documents/myProject/JLStickerTextView/StickerView/build/Debug-iphoneos/StickerViewTests.xctest"; sourceTree = "<absolute>"; };
 		1859E5F11D11677A00B53CB5 /* StickerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerViewTests.swift; sourceTree = "<group>"; };
 		1859E5F31D11677A00B53CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1859E5FD1D11679400B53CB5 /* adjustToFitFontOrWidth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = adjustToFitFontOrWidth.swift; sourceTree = "<group>"; };
@@ -46,6 +44,8 @@
 		1859E5FF1D11679400B53CB5 /* JLAttributedTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLAttributedTextView.swift; sourceTree = "<group>"; };
 		1859E6001D11679400B53CB5 /* JLStickerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLStickerImageView.swift; sourceTree = "<group>"; };
 		1859E6011D11679400B53CB5 /* JLStickerLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JLStickerLabelView.swift; sourceTree = "<group>"; };
+		EB0888691F3F5FA800C6C637 /* StickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB08886A1F3F5FA800C6C637 /* StickerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +72,8 @@
 				1859E5FC1D11678200B53CB5 /* Source */,
 				1859E5DB1D11677900B53CB5 /* StickerView */,
 				1859E5F01D11677A00B53CB5 /* StickerViewTests */,
+				EB0888691F3F5FA800C6C637 /* StickerView.app */,
+				EB08886A1F3F5FA800C6C637 /* StickerViewTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,7 +128,7 @@
 			);
 			name = StickerView;
 			productName = StickerView;
-			productReference = 1859E5D91D11677900B53CB5 /* StickerView.app */;
+			productReference = EB0888691F3F5FA800C6C637 /* StickerView.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1859E5EC1D11677A00B53CB5 /* StickerViewTests */ = {
@@ -144,7 +146,7 @@
 			);
 			name = StickerViewTests;
 			productName = StickerViewTests;
-			productReference = 1859E5ED1D11677A00B53CB5 /* StickerViewTests.xctest */;
+			productReference = EB08886A1F3F5FA800C6C637 /* StickerViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -154,7 +156,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = luiyezheng;
 				TargetAttributes = {
 					1859E5D81D11677900B53CB5 = {
@@ -277,8 +279,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -325,8 +329,10 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -420,6 +426,7 @@
 				1859E5F81D11677A00B53CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1859E5F91D11677A00B53CB5 /* Build configuration list for PBXNativeTarget "StickerViewTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +435,7 @@
 				1859E5FB1D11677A00B53CB5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
