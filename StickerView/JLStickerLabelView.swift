@@ -123,12 +123,12 @@ public class JLStickerLabelView: UIView {
     
     init() {
         super.init(frame: CGRect.zero)
-        setup()
+        setup(defaultText: nil)
         adjustsWidthToFillItsContens(self, labelView: labelTextView)
         
     }
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, defaultText: String?) {
         super.init(frame: frame)
         
         if frame.size.width < 25 {
@@ -139,13 +139,13 @@ public class JLStickerLabelView: UIView {
             self.bounds.size.height = 25
         }
         
-        self.setup()
+        self.setup(defaultText: defaultText)
         adjustsWidthToFillItsContens(self, labelView: labelTextView)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setup()
+        setup(defaultText: nil)
         adjustsWidthToFillItsContens(self, labelView: labelTextView)
         
     }
@@ -157,14 +157,18 @@ public class JLStickerLabelView: UIView {
         }
     }
     
-    func setup() {
+    func setup(defaultText: String?) {
         self.globalInset = 19
         
         self.backgroundColor = UIColor.clear
         self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         self.border?.strokeColor = UIColor(red: 33, green: 45, blue: 59, alpha: 1).cgColor
         
-        self.setupLabelTextView()
+        if let defaultText = defaultText {
+            self.setupLabelTextView(defaultText: defaultText)
+        } else {
+            self.setupLabelTextView()
+        }
         self.setupBorder()
         
         self.insertSubview(labelTextView!, at: 0)
@@ -370,7 +374,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
 //MARK: -
 //MARK: setup
 extension JLStickerLabelView {
-    func setupLabelTextView() {
+    func setupLabelTextView(defaultText: String = "Tap to edit") {
         labelTextView = JLAttributedTextView(frame: self.bounds.insetBy(dx: globalInset!, dy: globalInset!))
         labelTextView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         labelTextView?.clipsToBounds = true
@@ -380,7 +384,7 @@ extension JLStickerLabelView {
         labelTextView?.isScrollEnabled = false
         labelTextView.isSelectable = true
         labelTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        labelTextView?.text = "Tap to Edit"
+        labelTextView?.text = defaultText
         
     }
     
