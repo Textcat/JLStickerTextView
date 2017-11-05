@@ -103,7 +103,7 @@ extension JLStickerImageView {
 //MARK-
 //MARK: Gesture
 extension JLStickerImageView {
-    func tapOutside() {
+    @objc func tapOutside() {
         if let _: JLStickerLabelView = currentlyEditingLabel {
             currentlyEditingLabel.hideEditingHandlers()
         }

@@ -241,7 +241,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
     }
     
     
-    func contentTapped(_ recognizer: UITapGestureRecognizer) {
+    @objc func contentTapped(_ recognizer: UITapGestureRecognizer) {
         if !isShowingEditingHandles {
             self.showEditingHandles()
             
@@ -252,7 +252,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
         
     }
     
-    func closeTap(_ recognizer: UITapGestureRecognizer) {
+    @objc func closeTap(_ recognizer: UITapGestureRecognizer) {
         self.removeFromSuperview()
         
         if let delegate: JLStickerLabelViewDelegate = delegate {
@@ -262,7 +262,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
         }
     }
     
-    func moveGesture(_ recognizer: UIPanGestureRecognizer) {
+    @objc func moveGesture(_ recognizer: UIPanGestureRecognizer) {
         if !isShowingEditingHandles {
             self.showEditingHandles()
             
@@ -306,7 +306,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
         }
     }
     
-    func rotateViewPanGesture(_ recognizer: UIPanGestureRecognizer) {
+    @objc func rotateViewPanGesture(_ recognizer: UIPanGestureRecognizer) {
         touchLocation = recognizer.location(in: self.superview)
         
         let center = CalculateFunctions.CGRectGetCenter(self.frame)
