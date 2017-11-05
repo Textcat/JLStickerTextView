@@ -10,10 +10,10 @@ import UIKit
 
 public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
     public var currentlyEditingLabel: JLStickerLabelView!
-    private var labels: NSMutableArray!
+    internal var labels: NSMutableArray!
     private var renderedView: UIView!
     
-    private lazy var tapOutsideGestureRecognizer: UITapGestureRecognizer! = {
+    internal lazy var tapOutsideGestureRecognizer: UITapGestureRecognizer! = {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(JLStickerImageView.tapOutside))
         tapGesture.delegate = self
         return tapGesture
@@ -22,7 +22,6 @@ public class JLStickerImageView: UIImageView, UIGestureRecognizerDelegate {
     
     //MARK: -
     //MARK: init
-
     
     init() {
         super.init(frame: CGRect.zero)
@@ -51,7 +50,7 @@ extension JLStickerImageView {
         if let label: JLStickerLabelView = currentlyEditingLabel {
             label.hideEditingHandlers()
         }
-    
+        
         let labelFrame = CGRect(x: self.bounds.midX - CGFloat(arc4random()).truncatingRemainder(dividingBy: 20),
                                     y: self.bounds.midY - CGFloat(arc4random()).truncatingRemainder(dividingBy: 20),
                                     width: 60, height: 50)
@@ -59,13 +58,13 @@ extension JLStickerImageView {
         labelView.delegate = self
         labelView.showsContentShadow = false
         //labelView.enableMoveRestriction = false
-        labelView.borderColor = UIColor.white()
+        labelView.borderColor = UIColor.white
         labelView.labelTextView.fontName = "Baskerville-BoldItalic"
         self.addSubview(labelView)
         self.currentlyEditingLabel = labelView
         adjustsWidthToFillItsContens(currentlyEditingLabel, labelView: currentlyEditingLabel.labelTextView)
         self.labels.add(labelView)
-
+        
         self.addGestureRecognizer(tapOutsideGestureRecognizer)
         
     }
@@ -88,17 +87,17 @@ extension JLStickerImageView {
         self.translatesAutoresizingMaskIntoConstraints = true
         let imageSize = self.image?.size
         let aspectRatio = imageSize!.width / imageSize!.height
-        
-        if imageSize?.width > imageSize?.height {
+
+        guard let imageWidth = imageSize?.width, let imageHeight = imageSize?.height else { return }
+
+        if imageWidth > imageHeight {
             self.bounds.size.width = self.superview!.bounds.size.width
             self.bounds.size.height = self.superview!.bounds.size.width / aspectRatio
         }else {
             self.bounds.size.height = self.superview!.bounds.size.height
             self.bounds.size.width = self.superview!.bounds.size.height * aspectRatio
         }
-        
     }
-    
 }
 
 //MARK-
@@ -144,7 +143,7 @@ extension JLStickerImageView: JLStickerLabelViewDelegate {
     }
     
     public func labelViewDidEndEditing(_ label: JLStickerLabelView) {
-
+        
         
     }
     
@@ -177,7 +176,7 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
             if self.currentlyEditingLabel != nil {
                 self.currentlyEditingLabel.labelTextView.fontName = newValue
                 adjustsWidthToFillItsContens(currentlyEditingLabel, labelView: currentlyEditingLabel.labelTextView)
-
+                
             }
         }
         get {
@@ -239,7 +238,7 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
     
     //MARK: -
     //MARK: text Background
-
+    
     public var textBackgroundColor: UIColor! {
         set {
             if self.currentlyEditingLabel != nil {
@@ -262,13 +261,13 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
         }
         get {
             return self.currentlyEditingLabel.labelTextView.textBackgroundAlpha
-
+            
         }
     }
     
     //MARK: -
     //MARK: text shadow
-
+    
     public var textShadowOffset: CGSize! {
         set {
             if self.currentlyEditingLabel != nil {
@@ -304,6 +303,4 @@ extension JLStickerImageView: adjustFontSizeToFillRectProtocol {
             return self.currentlyEditingLabel.labelTextView.shadow?.shadowBlurRadius
         }
     }
-    
-    
 }

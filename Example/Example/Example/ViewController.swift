@@ -10,7 +10,7 @@ import UIKit
 import JLStickerTextView
 
 class ViewController: UIViewController {
-    var colorsArray = [UIColor.white(), UIColor.black(), UIColor.yellow()]
+    var colorsArray = [UIColor.white, UIColor.black, UIColor.yellow]
     var fontNamesArray = ["AcademyEngravedLetPlain", "AlNile-Bold", "Chalkduster"]
     var textAlphaArray = [0.3, 0.6, 1.0]
     var lineSpacings = [1,30,50]
@@ -54,11 +54,11 @@ class ViewController: UIViewController {
         stickerView.addLabel()
         
         //Modify the Label
-        stickerView.textColor = UIColor.white()
+        stickerView.textColor = UIColor.white
         stickerView.textAlpha = 1
         stickerView.currentlyEditingLabel.closeView!.image = UIImage(named: "cancel")
         stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate")
-        stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.white().cgColor
+        stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.white.cgColor
         
     }
     
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         let shadowOffset = shadowOffsets[Int(index)]
         
         stickerView.textShadowOffset = CGSize(width: CGFloat(shadowOffset), height: 10)
-        stickerView.textShadowColor = UIColor.red()
+        stickerView.textShadowColor = UIColor.red
     }
     
     
