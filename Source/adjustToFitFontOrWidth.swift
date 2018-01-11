@@ -62,7 +62,6 @@ extension adjustFontSizeToFillRectProtocol {
     
     func adjustsWidthToFillItsContens(_ view: JLStickerLabelView, labelView: JLAttributedTextView) {
         
-        
         let attributedText = labelView.attributedText
         
         let recSize = attributedText?.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, context: nil)
