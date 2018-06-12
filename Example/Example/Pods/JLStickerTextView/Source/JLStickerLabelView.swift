@@ -60,12 +60,28 @@ public class JLStickerLabelView: UIView {
     public var labelTextView: JLAttributedTextView!
     public var rotateView: UIImageView?
     public var closeView: UIImageView?
+    fileprivate var backgroundImageView : UIImageView?
     
     fileprivate var isShowingEditingHandles = true
     
     public var borderColor: UIColor? {
         didSet {
             border?.strokeColor = borderColor?.cgColor
+        }
+    }
+    
+    public var backgroundImage: UIImage? {
+        didSet {
+            backgroundImageView = UIImageView(frame: bounds)
+            backgroundImageView?.bounds = bounds
+            backgroundImageView?.image = backgroundImage
+            backgroundImageView?.contentMode = .scaleAspectFit
+            backgroundImageView?.clipsToBounds = true
+            backgroundColor = UIColor.clear
+            if let view = backgroundImageView {
+                addSubview(view)
+                sendSubview(toBack: view)
+            }
         }
     }
 

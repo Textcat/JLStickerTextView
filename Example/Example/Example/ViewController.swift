@@ -60,6 +60,12 @@ class ViewController: UIViewController {
         stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate")
         stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.white.cgColor
         
+        //First option, use patternImage
+        //stickerView.currentlyEditingLabel.backgroundColor = UIColor(patternImage: UIImage(named: "cancel")!)
+        
+        //Second option, use UIImageVIew
+        stickerView.currentlyEditingLabel.backgroundImage = UIImage(named: "smile")
+        
     }
     
     @IBAction func onRefreshShadow(_ sender: UIBarButtonItem) {
@@ -84,6 +90,8 @@ class ViewController: UIViewController {
         stickerView.limitImageViewToSuperView()
         stickerView.center = self.view.center
         stickerView.contentMode = .scaleAspectFit
+        stickerView.textBackgroundColor = UIColor.yellow
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
