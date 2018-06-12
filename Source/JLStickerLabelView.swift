@@ -11,7 +11,7 @@ import UIKit
 public class JLStickerLabelView: UIView {
     //MARK: -
     //MARK: Gestures
-
+    
     private lazy var moveGestureRecognizer: UIPanGestureRecognizer! = {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(JLStickerLabelView.moveGesture(_:)))
         panRecognizer.delegate = self
@@ -60,6 +60,7 @@ public class JLStickerLabelView: UIView {
     public var labelTextView: JLAttributedTextView!
     public var rotateView: UIImageView?
     public var closeView: UIImageView?
+    fileprivate var backgroundImageView : UIImageView?
     
     fileprivate var isShowingEditingHandles = true
     
@@ -68,7 +69,22 @@ public class JLStickerLabelView: UIView {
             border?.strokeColor = borderColor?.cgColor
         }
     }
-
+    
+    public var backgroundImage: UIImage? {
+        didSet {
+            backgroundImageView = UIImageView(frame: bounds)
+            backgroundImageView?.bounds = bounds
+            backgroundImageView?.image = backgroundImage
+            backgroundImageView?.contentMode = .scaleAspectFit
+            backgroundImageView?.clipsToBounds = true
+            backgroundColor = UIColor.clear
+            if let view = backgroundImageView {
+                addSubview(view)
+                sendSubview(toBack: view)
+            }
+        }
+    }
+    
     
     //MARK: -
     //MARK: Set Control Buttons
@@ -108,7 +124,7 @@ public class JLStickerLabelView: UIView {
     
     //MARK: -
     //MARK: didMoveToSuperView
-
+    
     override public func didMoveToSuperview() {
         super.didMoveToSuperview()
         if self.superview != nil {
@@ -120,7 +136,7 @@ public class JLStickerLabelView: UIView {
     
     //MARK: -
     //MARK: init
-
+    
     init() {
         super.init(frame: CGRect.zero)
         setup()
@@ -202,7 +218,7 @@ extension JLStickerLabelView: UITextViewDelegate {
     }
     
     public func textViewDidBeginEditing(_ textView: UITextView) {
-
+        
         if let delegate: JLStickerLabelViewDelegate = delegate {
             if delegate.responds(to: #selector(JLStickerLabelViewDelegate.labelViewDidStartEditing(_:))) {
                 delegate.labelViewDidStartEditing!(self)
@@ -216,7 +232,7 @@ extension JLStickerLabelView: UITextViewDelegate {
             showEditingHandles()
         }
         //if textView.text != "" {
-            //adjustsWidthToFillItsContens(self, labelView: labelTextView)
+        //adjustsWidthToFillItsContens(self, labelView: labelTextView)
         //}
         
         return true
@@ -226,7 +242,7 @@ extension JLStickerLabelView: UITextViewDelegate {
         if textView.text != "" {
             adjustsWidthToFillItsContens(self, labelView: labelTextView)
             labelTextView.attributedText = NSAttributedString(string: labelTextView.text, attributes: labelTextView.textAttributes)
-
+            
         }
         
     }
@@ -303,7 +319,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
             if let delegate: JLStickerLabelViewDelegate = delegate {
                 delegate.labelViewDidEndEditing!(self)
             }
-
+            
         default:break
             
         }
@@ -363,7 +379,7 @@ extension JLStickerLabelView: UIGestureRecognizerDelegate, adjustFontSizeToFillR
             
             self.refresh()
             
-            //self.adjustsWidthToFillItsContens(self, labelView: labelTextView)
+        //self.adjustsWidthToFillItsContens(self, labelView: labelTextView)
         default:break
             
         }
@@ -385,7 +401,7 @@ extension JLStickerLabelView {
         labelTextView.isSelectable = true
         labelTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0)
         labelTextView?.text = "Tap to Edit"
-
+        
     }
     
     func setupBorder() {
@@ -394,7 +410,7 @@ extension JLStickerLabelView {
         border?.fillColor = nil
         border?.lineDashPattern = [10, 2]
         border?.lineWidth = 8
-
+        
     }
     
     func setupCloseAndRotateView() {
@@ -422,7 +438,7 @@ extension JLStickerLabelView {
         rotateView?.isUserInteractionEnabled = true
         addSubview(rotateView!)
     }
-
+    
 }
 
 
