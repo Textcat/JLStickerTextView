@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import JLStickerTextView
 
 class ViewController: UIViewController {
     var colorsArray = [UIColor.white, UIColor.black, UIColor.yellow]
@@ -32,14 +31,12 @@ class ViewController: UIViewController {
         stickerView.lineSpacing = CGFloat(lineSpacing)
     }
     
-    
     @IBAction func onRefreshFont(_ sender: UIBarButtonItem) {
         let index = arc4random_uniform(3)
         let fontName = fontNamesArray[Int(index)]
         
         stickerView.fontName = fontName
     }
-    
     
     @IBAction func onRefreshTextAlpha(_ sender: UIBarButtonItem) {
         let index = arc4random_uniform(3)
@@ -57,15 +54,10 @@ class ViewController: UIViewController {
         stickerView.textColor = UIColor.white
         stickerView.textAlpha = 1
         stickerView.currentlyEditingLabel.closeView!.image = UIImage(named: "cancel")
-        stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate")
+        stickerView.currentlyEditingLabel.rotateView?.image = UIImage(named: "rotate-option")
         stickerView.currentlyEditingLabel.border?.strokeColor = UIColor.white.cgColor
-        
-        //First option, use patternImage
-        //stickerView.currentlyEditingLabel.backgroundColor = UIColor(patternImage: UIImage(named: "cancel")!)
-        
-        //Second option, use UIImageVIew
-        stickerView.currentlyEditingLabel.backgroundImage = UIImage(named: "smile")
-        
+        stickerView.currentlyEditingLabel.labelTextView?.font = UIFont.systemFont(ofSize: 14.0)
+        stickerView.currentlyEditingLabel.labelTextView?.becomeFirstResponder()
     }
     
     @IBAction func onRefreshShadow(_ sender: UIBarButtonItem) {
@@ -76,30 +68,20 @@ class ViewController: UIViewController {
         stickerView.textShadowColor = UIColor.red
     }
     
-    
     @IBAction func onSaveImage(_ sender: UIBarButtonItem) {
         //render text on Image and save the Image
-        let image = stickerView.renderTextOnView(stickerView)
+        let image = stickerView.renderContentOnView()
         UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
 
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //This is optional. Not tested yet
-        stickerView.limitImageViewToSuperView()
-        stickerView.center = self.view.center
-        stickerView.contentMode = .scaleAspectFit
-        stickerView.textBackgroundColor = UIColor.yellow
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
