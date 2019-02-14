@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 ```
 
 If you use Storyboard, you also need connect the UIImageView to `JLStikcerImageView` Class in Identity Inspector.
-![](https://github.com/luiyezheng/JLStickerTextView/blob/master/Inspector.png)
+![](https://github.com/Textcat/JLStickerTextView/blob/master/Inspector.png)
 
 ### Add new Label
 
