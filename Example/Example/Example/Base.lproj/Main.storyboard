@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -76,9 +73,8 @@
                                 </variation>
                             </navigationBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="bridge" translatesAutoresizingMaskIntoConstraints="NO" id="8dV-8z-18R" customClass="JLStickerImageView" customModule="Example" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="111" width="600" height="556"/>
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="Hd9-u0-oD9"/>
                                     <constraint firstAttribute="height" constant="556" id="nrm-L0-6xH"/>
                                 </constraints>
                             </imageView>
@@ -88,8 +84,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8dV-8z-18R" secondAttribute="bottom" id="0bR-E3-xZi"/>
                             <constraint firstItem="8dV-8z-18R" firstAttribute="top" secondItem="2SF-t7-qL5" secondAttribute="bottom" id="330-o6-1hD"/>
                             <constraint firstItem="8dV-8z-18R" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ip-rB-v9z"/>
-                            <constraint firstItem="2SF-t7-qL5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="F8r-Nk-COO"/>
                             <constraint firstItem="2SF-t7-qL5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IAz-Fx-DYL"/>
+                            <constraint firstItem="2SF-t7-qL5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Q9q-y0-3aC"/>
                             <constraint firstItem="2SF-t7-qL5" firstAttribute="trailing" secondItem="8dV-8z-18R" secondAttribute="trailing" id="QYP-gm-qiU"/>
                             <constraint firstItem="8dV-8z-18R" firstAttribute="top" secondItem="2SF-t7-qL5" secondAttribute="bottom" id="SmS-a8-aVD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8dV-8z-18R" secondAttribute="bottom" constant="56" id="T8P-u8-vAT"/>
