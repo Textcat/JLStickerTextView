@@ -11,6 +11,7 @@ StickerTextView is an subclass of UIImageView. You can add multiple text to it, 
 * Set the Color, alpha, font, alignment, TextShadow, lineSpacing...... of the text
 * StickerTextView also handle the process of rendering text on Image
 * Written in Swift
+* Supports Swift version 5
 
 ## Installation
 
